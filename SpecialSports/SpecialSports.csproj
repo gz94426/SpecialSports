@@ -1,0 +1,1417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA875B52-17AF-410F-A05B-A52A49DDA638}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpecialSports</RootNamespace>
+    <AssemblyName>SpecialSports</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collect.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PersonalController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Evaluate.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsImg.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GoodsTypeInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="History.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logistics.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderBySeller.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopManagement.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreInfo_X_GoodsType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_AddressInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_city.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_county.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_manager.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_orderdetailsInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_province.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TurnsImg.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo_detail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="AmazeUI-2.4.2\assets\css\admin.css" />
+    <Content Include="AmazeUI-2.4.2\assets\css\amazeui.css" />
+    <Content Include="AmazeUI-2.4.2\assets\css\amazeui.flat.css" />
+    <Content Include="AmazeUI-2.4.2\assets\css\amazeui.flat.min.css" />
+    <Content Include="AmazeUI-2.4.2\assets\css\amazeui.min.css" />
+    <Content Include="AmazeUI-2.4.2\assets\css\app.css" />
+    <Content Include="AmazeUI-2.4.2\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="AmazeUI-2.4.2\assets\i\app-icon72x72%402x.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\admin-chrome.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\admin-firefox.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\admin-ie.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\admin-opera.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\admin-safari.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\adminPage.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\blogPage.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\landing.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\landingPage.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\loginPage.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\examples\sidebarPage.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\favicon.png" />
+    <Content Include="AmazeUI-2.4.2\assets\i\startup-640x1096.png" />
+    <Content Include="AmazeUI-2.4.2\assets\js\amazeui.ie8polyfill.js" />
+    <Content Include="AmazeUI-2.4.2\assets\js\amazeui.ie8polyfill.min.js" />
+    <Content Include="AmazeUI-2.4.2\assets\js\amazeui.js" />
+    <Content Include="AmazeUI-2.4.2\assets\js\amazeui.min.js" />
+    <Content Include="AmazeUI-2.4.2\assets\js\amazeui.widgets.helper.js" />
+    <Content Include="AmazeUI-2.4.2\assets\js\amazeui.widgets.helper.min.js" />
+    <Content Include="AmazeUI-2.4.2\assets\js\app.js" />
+    <Content Include="AmazeUI-2.4.2\assets\js\handlebars.min.js" />
+    <Content Include="AmazeUI-2.4.2\assets\js\jquery.min.js" />
+    <Content Include="basic\css\demo.css" />
+    <Content Include="basic\images\chongzhi.png" />
+    <Content Include="basic\images\ibar_sprites.png" />
+    <Content Include="basic\images\loading.gif" />
+    <Content Include="basic\images\logo.png" />
+    <Content Include="basic\images\logobar.png" />
+    <Content Include="basic\images\logobig.png" />
+    <Content Include="basic\images\no-img_mid_.jpg" />
+    <Content Include="basic\images\wdsc.png" />
+    <Content Include="basic\images\weixin_code_145.png" />
+    <Content Include="basic\js\jquery-1.7.min.js" />
+    <Content Include="basic\js\jquery-1.9.min.js" />
+    <Content Include="basic\js\quick_links.js" />
+    <Content Include="css\addstyle.css" />
+    <Content Include="css\appstyle.css" />
+    <Content Include="css\bilstyle.css" />
+    <Content Include="css\blogstyle.css" />
+    <Content Include="css\blstyle.css" />
+    <Content Include="css\bostyle.css" />
+    <Content Include="css\cartstyle.css" />
+    <Content Include="css\cmstyle.css" />
+    <Content Include="css\colstyle.css" />
+    <Content Include="css\cpstyle.css" />
+    <Content Include="css\dlstyle.css" />
+    <Content Include="css\footstyle.css" />
+    <Content Include="css\hmstyle.css" />
+    <Content Include="css\infstyle.css" />
+    <Content Include="css\jsstyle.css" />
+    <Content Include="css\lostyle.css" />
+    <Content Include="css\newstyle.css" />
+    <Content Include="css\optstyle.css" />
+    <Content Include="css\orstyle.css" />
+    <Content Include="css\personal.css" />
+    <Content Include="css\refstyle.css" />
+    <Content Include="css\seastyle.css" />
+    <Content Include="css\skin.css" />
+    <Content Include="css\sortstyle.css" />
+    <Content Include="css\stepstyle.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\sustyle.css" />
+    <Content Include="css\systyle.css" />
+    <Content Include="DianPimg\1.jpg" />
+    <Content Include="DianPimg\2.jpg" />
+    <Content Include="DianPimg\2017-10-18_111910.jpg" />
+    <Content Include="DianPimg\3.jpg" />
+    <Content Include="DianPimg\4.jpg" />
+    <Content Include="DianPimg\5.jpg" />
+    <Content Include="DianPimg\59843f50Nee6d3569.png" />
+    <Content Include="DianPimg\59dd807dN10404c72.png" />
+    <Content Include="DianPimg\59e5620dN06a8b861.png" />
+    <Content Include="DianPimg\59e5a6feN9459e585.jpg" />
+    <Content Include="DianPimg\6.png" />
+    <Content Include="DianPimg\7.jpg" />
+    <Content Include="DianPimg\8.jpg" />
+    <Content Include="DianPimg\9.jpg" />
+    <Content Include="DianPimg\adidas.jpg" />
+    <Content Include="DianPimg\Erke.jpg" />
+    <Content Include="DianPimg\hat.png" />
+    <Content Include="DianPimg\Lq_1.jpg" />
+    <Content Include="DianPimg\Lq_2.jpg" />
+    <Content Include="DianPimg\man.png" />
+    <Content Include="DianPimg\motion.jpg" />
+    <Content Include="DianPimg\Paiq_1.jpg" />
+    <Content Include="DianPimg\Pingpai_1.jpg" />
+    <Content Include="DianPimg\Pingpai_2.jpg" />
+    <Content Include="DianPimg\Pingpai_3.jpg" />
+    <Content Include="DianPimg\Pingpai_4.jpg" />
+    <Content Include="DianPimg\puma.jpg" />
+    <Content Include="DianPimg\taozhuang.jpg" />
+    <Content Include="DianPimg\woman.png" />
+    <Content Include="DianPimg\Xiezi.png" />
+    <Content Include="DianPimg\Xiezi2.jpg" />
+    <Content Include="DianPimg\Zq_1.gif" />
+    <Content Include="DianPimg\Zq_2.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="images\-0-saturn_solar.jpg_220x220.jpg" />
+    <Content Include="images\0-item_pic.jpg_220x220.jpg" />
+    <Content Include="images\01.jpg" />
+    <Content Include="images\01_mid.jpg" />
+    <Content Include="images\01_small.jpg" />
+    <Content Include="images\02.jpg" />
+    <Content Include="images\02_mid.jpg" />
+    <Content Include="images\02_small.jpg" />
+    <Content Include="images\03.jpg" />
+    <Content Include="images\03_mid.jpg" />
+    <Content Include="images\03_small.jpg" />
+    <Content Include="images\1-item_pic.jpg_220x220.jpg" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\10.jpg" />
+    <Content Include="images\11.jpg" />
+    <Content Include="images\1_160x160.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\2016.png" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\3CoOkxrFOP.png" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\5.jpg" />
+    <Content Include="images\556.png" />
+    <Content Include="images\557.png" />
+    <Content Include="images\559.png" />
+    <Content Include="images\566.png" />
+    <Content Include="images\566fda5cN4b8a1675.gif" />
+    <Content Include="images\6.jpg" />
+    <Content Include="images\62988.jpg_80x80.jpg" />
+    <Content Include="images\65.jpg_120x120xz.jpg" />
+    <Content Include="images\7.jpg" />
+    <Content Include="images\72h.png" />
+    <Content Include="images\8.jpg" />
+    <Content Include="images\88.jpg_120x120xz.jpg" />
+    <Content Include="images\9.jpg" />
+    <Content Include="images\act1.png" />
+    <Content Include="images\act2.png" />
+    <Content Include="images\act3.png" />
+    <Content Include="images\activity.jpg" />
+    <Content Include="images\activity1.jpg" />
+    <Content Include="images\activity2.jpg" />
+    <Content Include="images\activity3.jpg" />
+    <Content Include="images\ad1.jpg" />
+    <Content Include="images\ad2.jpg" />
+    <Content Include="images\ad3.jpg" />
+    <Content Include="images\ad4.jpg" />
+    <Content Include="images\ad5.jpg" />
+    <Content Include="images\ad6.jpg" />
+    <Content Include="images\ad7.jpg" />
+    <Content Include="images\ad8.jpg" />
+    <Content Include="images\addbg.png" />
+    <Content Include="images\addicon.png" />
+    <Content Include="images\addicon1.png" />
+    <Content Include="images\addicon2.png" />
+    <Content Include="images\advTip.jpg" />
+    <Content Include="images\bamboo.jpg" />
+    <Content Include="images\bamboo.png" />
+    <Content Include="images\big.jpg" />
+    <Content Include="images\blog01.jpg" />
+    <Content Include="images\blog02.jpg" />
+    <Content Include="images\blog03.jpg" />
+    <Content Include="images\blog04.jpg" />
+    <Content Include="images\blog05.jpg" />
+    <Content Include="images\blog06.jpg" />
+    <Content Include="images\blog07.jpg" />
+    <Content Include="images\blog08.jpg" />
+    <Content Include="images\blog09.jpg" />
+    <Content Include="images\bonus.png" />
+    <Content Include="images\browse1.jpg" />
+    <Content Include="images\cake.jpg" />
+    <Content Include="images\cake.png" />
+    <Content Include="images\candy.jpg" />
+    <Content Include="images\candy.png" />
+    <Content Include="images\cardbg.jpg" />
+    <Content Include="images\checkbox.gif" />
+    <Content Include="images\chocolate.jpg" />
+    <Content Include="images\chocolate.png" />
+    <Content Include="images\chongzhi.png" />
+    <Content Include="images\clockbg.png" />
+    <Content Include="images\close.png" />
+    <Content Include="images\combo.png" />
+    <Content Include="images\comment.jpg_400x400.jpg" />
+    <Content Include="images\comment.png" />
+    <Content Include="images\cookies.jpg" />
+    <Content Include="images\cookies.png" />
+    <Content Include="images\coupon.png" />
+    <Content Include="images\coupon2015.png" />
+    <Content Include="images\coupon20150805.png" />
+    <Content Include="images\couponli.png" />
+    <Content Include="images\cp.jpg" />
+    <Content Include="images\cp2.jpg" />
+    <Content Include="images\day-to.png" />
+    <Content Include="images\extra.png" />
+    <Content Include="images\fish.jpg" />
+    <Content Include="images\fish.png" />
+    <Content Include="images\getAvatar.do.jpg" />
+    <Content Include="images\gift_intro_bg.png" />
+    <Content Include="images\gift_stamp_1.png" />
+    <Content Include="images\gift_stamp_2.png" />
+    <Content Include="images\gift_stamp_21.png" />
+    <Content Include="images\gift_stamp_3.png" />
+    <Content Include="images\gift_stamp_31.png" />
+    <Content Include="images\header-bg.png" />
+    <Content Include="images\header-bg1.jpg" />
+    <Content Include="images\huismall.jpg" />
+    <Content Include="images\hwbn40x40.jpg" />
+    <Content Include="images\ibar_sprites.png" />
+    <Content Include="images\icon-sale.png" />
+    <Content Include="images\iconfont-bad.png" />
+    <Content Include="images\iconfont-badon.png" />
+    <Content Include="images\iconfont-evaluate.png" />
+    <Content Include="images\iconfont-good.png" />
+    <Content Include="images\iconfont-middle.png" />
+    <Content Include="images\iconsmall.png" />
+    <Content Include="images\iconsmall1.png" />
+    <Content Include="images\iconsmall2.png" />
+    <Content Include="images\iconsmall3.png" />
+    <Content Include="images\image.jpg" />
+    <Content Include="images\imgsearch1.jpg" />
+    <Content Include="images\index_ico_png32.png" />
+    <Content Include="images\islogin.jpg" />
+    <Content Include="images\item-pic.jpg" />
+    <Content Include="images\kouhong.jpg_80x80.jpg" />
+    <Content Include="images\kuaidi.png" />
+    <Content Include="images\list1.jpg" />
+    <Content Include="images\listsmall1.jpg" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo1.png" />
+    <Content Include="images\logobig.png" />
+    <Content Include="images\logobig1.png" />
+    <Content Include="images\logobig2.png" />
+    <Content Include="images\mansmall.jpg" />
+    <Content Include="images\mask.png" />
+    <Content Include="images\meat.jpg" />
+    <Content Include="images\meat.png" />
+    <Content Include="images\moneysmall.jpg" />
+    <Content Include="images\mygift_bg.png" />
+    <Content Include="images\navce.png" />
+    <Content Include="images\navsmall.jpg" />
+    <Content Include="images\no-img_mid_.jpg" />
+    <Content Include="images\nut.jpg" />
+    <Content Include="images\nut.png" />
+    <Content Include="images\package.jpg" />
+    <Content Include="images\package.png" />
+    <Content Include="images\pay.png" />
+    <Content Include="images\peraddbg.png" />
+    <Content Include="images\peraddress.png" />
+    <Content Include="images\peraddressbg.png" />
+    <Content Include="images\receive.png" />
+    <Content Include="images\refund.png" />
+    <Content Include="images\return-process-cd.jpg" />
+    <Content Include="images\row1.jpg" />
+    <Content Include="images\row2.jpg" />
+    <Content Include="images\row3.jpg" />
+    <Content Include="images\row4.jpg" />
+    <Content Include="images\sale-t.jpg" />
+    <Content Include="images\sale-t_clock.jpg" />
+    <Content Include="images\sale1.jpg" />
+    <Content Include="images\sale2.jpg" />
+    <Content Include="images\sale3.jpg" />
+    <Content Include="images\scoll1.png" />
+    <Content Include="images\scoll2.png" />
+    <Content Include="images\send.png" />
+    <Content Include="images\side.png" />
+    <Content Include="images\songzi.jpg" />
+    <Content Include="images\sprite.png" />
+    <Content Include="images\SSlogo.png" />
+    <Content Include="images\sys_item_selected.gif" />
+    <Content Include="images\T13iv.XiFdXXa94Hfd-32-32.png" />
+    <Content Include="images\TB102.jpg" />
+    <Content Include="images\TB1SSK7JpXXXXXCXXXXXXXXXXXX-800-600.png" />
+    <Content Include="images\TB1_pic.jpg_200x200.jpg" />
+    <Content Include="images\tea.jpg" />
+    <Content Include="images\tea.png" />
+    <Content Include="images\TJ.jpg" />
+    <Content Include="images\tj.png" />
+    <Content Include="images\tj1.png" />
+    <Content Include="images\TJ2.jpg" />
+    <Content Include="images\tj2.png" />
+    <Content Include="images\tw1.jpg" />
+    <Content Include="images\tw2.jpg" />
+    <Content Include="images\tw3.jpg" />
+    <Content Include="images\tw4.jpg" />
+    <Content Include="images\tw5.jpg" />
+    <Content Include="images\tw6.jpg" />
+    <Content Include="images\tw7.jpg" />
+    <Content Include="images\wallet.png" />
+    <Content Include="images\wangyin.jpg" />
+    <Content Include="images\wdsc.png" />
+    <Content Include="images\weixin_code_145.png" />
+    <Content Include="images\weizhifu.jpg" />
+    <Content Include="images\YXARdXxj5.png" />
+    <Content Include="images\zhifubao.jpg" />
+    <Content Include="images\图标.png" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\2.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\4.jpg" />
+    <Content Include="img\5.jpg" />
+    <Content Include="img\clothes\Shop-1\adidas_coat_2_5.jpg" />
+    <Content Include="img\clothes\Shop-1\adidas_coat_2_6.jpg" />
+    <Content Include="img\clothes\Shop-1\adidas_coat_2_7.jpg" />
+    <Content Include="img\clothes\Shop-1\adidas_suit_5_1_1.jpg" />
+    <Content Include="img\clothes\Shop-1\adidas_suit_5_1_2.jpg" />
+    <Content Include="img\clothes\Shop-1\adidas_suit_5_2_1.jpg" />
+    <Content Include="img\clothes\Shop-1\adidas_suit_5_2_2.jpg" />
+    <Content Include="img\clothes\Shop-1\adidas_suit_5_2_3.jpg" />
+    <Content Include="img\clothes\Shop-1\adidas_suit_5_3_1.jpg" />
+    <Content Include="img\clothes\Shop-1\adidas_suit_5_3_2.jpg" />
+    <Content Include="img\clothes\Shop-1\Size.jpg" />
+    <Content Include="img\clothes\Shop-1\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_2\adidas_coat_big_1.jpg" />
+    <Content Include="img\clothes\Shop_2\adidas_coat_big_2.jpg" />
+    <Content Include="img\clothes\Shop_2\adidas_coat_big_3.jpg" />
+    <Content Include="img\clothes\Shop_2\adidas_coat_Small_1.jpg" />
+    <Content Include="img\clothes\Shop_2\adidas_coat_Small_2.jpg" />
+    <Content Include="img\clothes\Shop_2\adidas_coat_Small_3.jpg" />
+    <Content Include="img\clothes\Shop_2\bg1.jpg" />
+    <Content Include="img\clothes\Shop_2\bj1.jpg" />
+    <Content Include="img\clothes\Shop_2\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_one_small_1.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_one_small_2.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_one_small_3.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_three_big_1.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_three_big_2.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_three_big_3.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_three_small_1.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_three_small_2.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_three_small_3.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_two_big_1.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_two_big_2.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_two_big_3.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_two_small_1.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_two_small_2.jpg" />
+    <Content Include="img\clothes\Shop_3\adidas_coat_two_small_3.jpg" />
+    <Content Include="img\clothes\Shop_3\bg1.jpg" />
+    <Content Include="img\clothes\Shop_3\bj1.jpg" />
+    <Content Include="img\clothes\Shop_3\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_one_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_one_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_one_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_three_big_1.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_three_big_2.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_three_big_3.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_three_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_three_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_three_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_two_big_1.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_two_big_2.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_two_big_3.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_two_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_two_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_4\adidas_coat_two_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_4\bj1.jpg" />
+    <Content Include="img\clothes\Shop_4\bj2.jpg" />
+    <Content Include="img\clothes\Shop_4\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_5\adidas_short_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_one_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_one_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_one_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_three_big_1.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_three_big_2.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_three_big_3.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_three_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_three_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_three_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_two_big_1.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_two_big_2.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_two_big_3.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_two_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_two_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_5\adidas_short_two_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_5\bj1.jpg" />
+    <Content Include="img\clothes\Shop_5\bj2.jpg" />
+    <Content Include="img\clothes\Shop_5\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_6\adidas_short_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_one_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_one_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_one_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_two_big_1.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_two_big_2.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_two_big_3.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_two_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_two_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_6\adidas_short_two_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_6\bj1.jpg" />
+    <Content Include="img\clothes\Shop_6\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_7\adidas_short_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_one_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_one_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_one_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_three_big_1.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_three_big_2.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_three_big_3.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_three_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_three_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_three_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_two_big_1.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_two_big_2.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_two_big_3.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_two_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_two_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_7\adidas_short_two_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_7\bj1.jpg" />
+    <Content Include="img\clothes\Shop_7\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_8\Liling_short_four_big_man_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_four_big_man_2.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_four_big_woman_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_four_smoll_man_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_four_smoll_man_2.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_four_smoll_woman_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_one_big_man_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_one_big_man_2.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_one_big_wonman_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_one_smoll_man_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_one_smoll_wonman_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_one_smoll_wonman_2.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_three_big_man_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_three_big_woman_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_three_smoll_man_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_three_smoll_woman_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_two_big_man_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_two_big_man_2.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_two_big_woman_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_two_smoll_man_1.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_two_smoll_man_2.jpg" />
+    <Content Include="img\clothes\Shop_8\Liling_short_two_smoll_woman_1.jpg" />
+    <Content Include="img\clothes\Shop_8\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_one_Small_1.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_one_Small_2.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_one_Small_3.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_three_big_1.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_three_big_2.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_three_big_3.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_three_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_three_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_three_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_two_big_1.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_two_big_2.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_two_big_3.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_two_Small_1.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_two_Small_3.jpg" />
+    <Content Include="img\clothes\Shop_9\Liling_coat_two_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_9\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_one_big.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_one_smoll.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_one_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_one_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_one_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_three_big_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_three_big_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_three_big_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_three_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_three_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_three_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_two_big_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_two_big_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_two_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_basketball_two_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\Liling_bj1.png" />
+    <Content Include="img\clothes\Shop_basketball\QianDan_bj1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_four_big_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_four_big_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_four_big_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_four_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_four_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_four_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_one_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_one_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_one_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_three_big_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_three_big_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_three_big_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_three_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_three_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_three_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_two_big_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_two_big_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_two_big_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_two_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_two_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\QiaoDan_basketball_two_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_big_4.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_big_5.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_big_6.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_smoll_4.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_smoll_5.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_one_smoll_6.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_big_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_big_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_big_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_big_4.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_big_5.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_big_6.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_smoll_4.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_smoll_5.jpg" />
+    <Content Include="img\clothes\Shop_basketball\xx_basketball_two_smoll_6.jpg" />
+    <Content Include="img\clothes\Shop_basketball\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_big_4.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_big_5.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_big_6.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_big_7.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_bj1.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_smoll_4.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_smoll_5.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_smoll_6.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_one_smoll_7.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_big_1.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_big_2.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_big_3.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_big_4.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_big_5.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_big_6.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_big_7.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_smoll_4.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_smoll_5.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_smoll_6.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_three_smoll_7.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_big_1.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_big_2.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_big_3.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_big_4.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_big_5.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_big_6.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_big_7.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_big_8.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_big_9.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_smoll_4.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_smoll_5.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_smoll_6.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_smoll_7.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_smoll_8.jpg" />
+    <Content Include="img\clothes\Shop_football\xx_football_tow_smoll_9.jpg" />
+    <Content Include="img\clothes\Shop_football\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_big_2.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_big_3.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_big_4.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_big_5.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_big_6.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_smoll_3.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_smoll_4.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_smoll_5.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\xx_Volleyball_one_smoll_6.jpg" />
+    <Content Include="img\clothes\Shop_Volleyball\新建文本文档.txt" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman-one_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman-three_big_1.jpg" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman-two_big_1.jpg" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman_five_big_1.jpg" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman_five_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman_four_big_1.jpg" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman_four_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman_four_smoll_2.jpg" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman_one_big_1.jpg" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman_three_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_yoga\yuga_wuman_two_smoll_1.jpg" />
+    <Content Include="img\clothes\Shop_yoga\新建文本文档.txt" />
+    <Content Include="img\islogin.jpg" />
+    <Content Include="img\kuzi123.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_big_4.jpg" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_big_5.jpg" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_big_6.png" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Ball\Basketball_one_smoll_5.jpg" />
+    <Content Include="img\Shopimg\Ball\football_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Ball\football_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Ball\football_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Ball\football_one_big_4.jpg" />
+    <Content Include="img\Shopimg\Ball\football_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Ball\football_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Ball\football_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Ball\football_one_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Ball\Rugby_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Ball\Rugby_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Ball\Rugby_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Ball\Rugby_one_big_4.jpg" />
+    <Content Include="img\Shopimg\Ball\Rugby_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Ball\Rugby_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Ball\Rugby_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Ball\Rugby_one_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Ball\Volley_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Ball\Volley_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Ball\Volley_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Ball\Volley_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Ball\Volley_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Ball\Volley_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_four_big_1_1.png" />
+    <Content Include="img\Shopimg\coat\Coat1_four_big_1_2.png" />
+    <Content Include="img\Shopimg\coat\Coat1_four_big_1_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_four_big_2_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_four_big_2_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_four_big_2_3.png" />
+    <Content Include="img\Shopimg\coat\Coat1_four_big_3_1.png" />
+    <Content Include="img\Shopimg\coat\Coat1_four_big_3_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_four_big_3_3.png" />
+    <Content Include="img\Shopimg\coat\Coat1_four_smoll_1_1.png" />
+    <Content Include="img\Shopimg\coat\Coat1_four_smoll_1_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_four_smoll_1_3.png" />
+    <Content Include="img\Shopimg\coat\Coat1_four_smoll_2_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_four_smoll_2_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_four_smoll_2_3.png" />
+    <Content Include="img\Shopimg\coat\Coat1_four_smoll_3_1.png" />
+    <Content Include="img\Shopimg\coat\Coat1_four_smoll_3_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_four_smoll_3_2.png" />
+    <Content Include="img\Shopimg\coat\Coat1_four_smoll_3_3.png" />
+    <Content Include="img\Shopimg\coat\Coat1_one-bj1.png" />
+    <Content Include="img\Shopimg\coat\Coat1_one_big_1_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_big_1_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_big_1_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_big_1_4.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_big_2_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_big_2_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_big_2_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_big_3_1.png" />
+    <Content Include="img\Shopimg\coat\Coat1_one_big_3_2.png" />
+    <Content Include="img\Shopimg\coat\Coat1_one_big_3_3.png" />
+    <Content Include="img\Shopimg\coat\Coat1_one_smoll_1_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_smoll_1_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_smoll_1__2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_smoll_1__4.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_smoll_2_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_smoll_2_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_smoll_2_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_one_smoll_3_1.png" />
+    <Content Include="img\Shopimg\coat\Coat1_one_smoll_3_2.png" />
+    <Content Include="img\Shopimg\coat\Coat1_one_smoll_3_3.png" />
+    <Content Include="img\Shopimg\coat\Coat1_three_big_1_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_big_1_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_big_1_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_big_2_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_big_2_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_big_2_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_big_3_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_big_3_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_big_3_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_smoll_1_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_smoll_1_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_smoll_1_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_smoll_2_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_smoll_2_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_smoll_2_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_smoll_3_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_smoll_3_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_three_smoll_3_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_big_1_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_big_1_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_big_1_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_big_2_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_big_2_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_big_2_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_bj1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_smoll_1_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_smoll_1_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_smoll_1_3.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_smoll_2_1.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_smoll_2_2.jpg" />
+    <Content Include="img\Shopimg\coat\Coat1_two_smoll_2_3.jpg" />
+    <Content Include="img\Shopimg\coat\新建文本文档.txt" />
+    <Content Include="img\Shopimg\Hat\Hat_four_big_1.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_four_big_2.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_four_big_3.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_four_big_4.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_four_big_5.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_four_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_four_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_four_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_four_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_four_smoll_5.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_three_big_1.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_three_big_2.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_three_big_3.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_three_big_4.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_three_big_5.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_three_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_three_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_three_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_three_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_three_smoll_5.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_two_big_1.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_two_big_2.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_two_big_3.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_two_big_4.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_two_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_two_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_two_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Hat\Hat_two_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Hat\新建文本文档.txt" />
+    <Content Include="img\Shopimg\QiCai\bag_big_1.jpg" />
+    <Content Include="img\Shopimg\QiCai\bag_big_2.jpg" />
+    <Content Include="img\Shopimg\QiCai\bag_big_3.jpg" />
+    <Content Include="img\Shopimg\QiCai\bag_big_4.jpg" />
+    <Content Include="img\Shopimg\QiCai\bag_smoll_1.jpg" />
+    <Content Include="img\Shopimg\QiCai\bag_smoll_2.jpg" />
+    <Content Include="img\Shopimg\QiCai\bag_smoll_3.jpg" />
+    <Content Include="img\Shopimg\QiCai\bag_smoll_4.jpg" />
+    <Content Include="img\Shopimg\QiCai\shoutao_big_1.jpg" />
+    <Content Include="img\Shopimg\QiCai\shoutao_big_2.jpg" />
+    <Content Include="img\Shopimg\QiCai\shoutao_big_3.jpg" />
+    <Content Include="img\Shopimg\QiCai\shoutao_big_5.jpg" />
+    <Content Include="img\Shopimg\QiCai\shoutao_big_7.jpg" />
+    <Content Include="img\Shopimg\QiCai\shoutao_smoll_1.jpg" />
+    <Content Include="img\Shopimg\QiCai\shoutao_smoll_2.jpg" />
+    <Content Include="img\Shopimg\QiCai\shoutao_smoll_3.jpg" />
+    <Content Include="img\Shopimg\QiCai\shoutao_smoll_5.jpg" />
+    <Content Include="img\Shopimg\QiCai\shoutao_smoll_6.jpg" />
+    <Content Include="img\Shopimg\QiCai\_big_1.jpg" />
+    <Content Include="img\Shopimg\QiCai\_big_2.jpg" />
+    <Content Include="img\Shopimg\QiCai\_big_3.jpg" />
+    <Content Include="img\Shopimg\QiCai\_big_4.jpg" />
+    <Content Include="img\Shopimg\QiCai\_smoll_1.jpg" />
+    <Content Include="img\Shopimg\QiCai\_smoll_2.jpg" />
+    <Content Include="img\Shopimg\QiCai\_smoll_3.jpg" />
+    <Content Include="img\Shopimg\QiCai\_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Shoes\bj.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual.txt" />
+    <Content Include="img\Shopimg\Shoes\Casual_one_big.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_one_big_4.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_one_smoll.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_one_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_three_big_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_three_big_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_three_big_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_three_big_4.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_three_big_5.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_three_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_three_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_three_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_three_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_three_smoll_5.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_tow_big_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_tow_big_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_tow_big_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_tow_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_tow_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_tow_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_two_big_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_two_big_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_two_big_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_two_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_two_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_two_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman.txt" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_bj1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_bj2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_one_big_4.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_one_big_5.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_one_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_one_smoll_5.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_three_big_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_three_big_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_three_big_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_three_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_three_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_three_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_two_big_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_two_big_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_two_big_3.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_two_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_two_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Shoes\Casual_woman_two_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_one_Small_1.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_one_Small_2.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_one_Small_3.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_three_big_1.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_three_big_2.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_three_big_3.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_three_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_three_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_three_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_two_big_1.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_two_big_2.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_two_big_3.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_two_Small_1.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_two_Small_3.jpg" />
+    <Content Include="img\Shopimg\Suit\Liling_coat_two_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Suit\新建文本文档.txt" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_big_4.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_big_5.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_big_6.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_big_7.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_smoll_5.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_smoll_6.jpg" />
+    <Content Include="img\Shopimg\Trousers\adidas_one_smoll_7.jpg" />
+    <Content Include="img\Shopimg\Trousers\Feishuku_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\Feishuku_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\Feishuku_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\Feishuku_one_big_4.jpg" />
+    <Content Include="img\Shopimg\Trousers\Feishuku_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\Feishuku_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\Feishuku_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\Feishuku_one_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Trousers\LianTi_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\LianTi_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\LianTi_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\LianTi_one_big_4.jpg" />
+    <Content Include="img\Shopimg\Trousers\LianTi_one_big_5.jpg" />
+    <Content Include="img\Shopimg\Trousers\LianTi_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\LianTi_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\LianTi_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\LianTi_one_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Trousers\LianTi_one_smoll_5.jpg" />
+    <Content Include="img\Shopimg\Trousers\NaiKe_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\NaiKe_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\NaiKe_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\NaiKe_one_big_4.jpg" />
+    <Content Include="img\Shopimg\Trousers\NaiKe_one_big_5.jpg" />
+    <Content Include="img\Shopimg\Trousers\NaiKe_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\NaiKe_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\NaiKe_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\NaiKe_one_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Trousers\NaiKe_one_smoll_5.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_five_big_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_five_big_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_five_big_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_five_big_4.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_five_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_five_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_five_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_five_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_four_big_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_four_big_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_four_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_four_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_one_big_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_one_big_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_one_bj1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_one_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_one_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_three_big_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_three_big_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_three_big_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_three_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_three_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_three_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_two_big_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_two_big_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_two_big_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_two_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_two_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Trousers\woman_two_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Trousers\新建文本文档.txt" />
+    <Content Include="img\Shopimg\Yoga\QiCai\shoutao_big_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\shoutao_big_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\shoutao_big_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\shoutao_big_5.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\shoutao_big_7.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\shoutao_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\shoutao_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\shoutao_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\shoutao_smoll_5.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\shoutao_smoll_6.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\_big_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\_big_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\_big_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\_big_4.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\QiCai\_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Yoga\run_big_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\run_big_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\run_big_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\run_big_4.jpg" />
+    <Content Include="img\Shopimg\Yoga\run_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\run_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\run_smoll_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\run_smoll_4.jpg" />
+    <Content Include="img\Shopimg\Yoga\Slimming_big_1-1.jpg" />
+    <Content Include="img\Shopimg\Yoga\Slimming_big_1-2.jpg" />
+    <Content Include="img\Shopimg\Yoga\Slimming_big_1-3.jpg" />
+    <Content Include="img\Shopimg\Yoga\Slimming_smoll_1-1.jpg" />
+    <Content Include="img\Shopimg\Yoga\Slimming_smoll_1-2.jpg" />
+    <Content Include="img\Shopimg\Yoga\Slimming_smoll_1-3.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_big_1_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_big_1_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_big_1_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_big_2_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_big_2_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_big_2_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_big_3_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_big_3_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_big_3_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_smoll_1_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_smoll_1_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_smoll_1_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_smoll_2_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_smoll_2_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_smoll_2_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_smoll_3_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_smoll_3_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\tea_smoll_3_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_1_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_1_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_1_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_1_4.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_1_5.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_1_6.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_2_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_2_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_2_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_3_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_3_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_3_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_3_4.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_3_5.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_3_6.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_3_7.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_4_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_4_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_4_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_4_4.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_big_4_5.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_1_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_1_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_1_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_1_4.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_1_5.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_1_6.png" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_2_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_Smoll_2_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_Smoll_2_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_3_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_3_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_3_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_3_4.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_3_5.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_3_6.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_3_7.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_4_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_4_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_4_3.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_4_4.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_smoll_4_5.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman-one_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman-three_big_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman-two_big_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman_five_big_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman_five_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman_four_big_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman_four_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman_four_smoll_2.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman_one_big_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman_three_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\yuga_wuman_two_smoll_1.jpg" />
+    <Content Include="img\Shopimg\Yoga\新建文本文档.txt" />
+    <Content Include="img\SSlogo.png" />
+    <Content Include="img_bj\1.jpg" />
+    <Content Include="img_bj\10.jpg" />
+    <Content Include="img_bj\2.jpg" />
+    <Content Include="img_bj\3.jpg" />
+    <Content Include="img_bj\4.jpg" />
+    <Content Include="img_bj\5.jpg" />
+    <Content Include="img_bj\6.jpg" />
+    <Content Include="img_bj\7.jpg" />
+    <Content Include="img_bj\8.jpg" />
+    <Content Include="img_bj\9.jpg" />
+    <Content Include="js\address.js" />
+    <Content Include="js\jquery-1.7.2.min.js" />
+    <Content Include="js\jquery-1.9.1.min.js" />
+    <Content Include="js\jquery.flexslider.js" />
+    <Content Include="js\jquery.imagezoom.min.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\layer\layer.js" />
+    <Content Include="js\layer\mobile\layer.js" />
+    <Content Include="js\layer\mobile\need\layer.css" />
+    <Content Include="js\layer\skin\default\icon-ext.png" />
+    <Content Include="js\layer\skin\default\icon.png" />
+    <Content Include="js\layer\skin\default\layer.css" />
+    <Content Include="js\layer\skin\default\loading-0.gif" />
+    <Content Include="js\layer\skin\default\loading-1.gif" />
+    <Content Include="js\layer\skin\default\loading-2.gif" />
+    <Content Include="js\list.js" />
+    <Content Include="js\script.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Register\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AmazeUI-2.4.2\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="AmazeUI-2.4.2\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="AmazeUI-2.4.2\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="AmazeUI-2.4.2\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="AmazeUI-2.4.2\assets\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DianPimg\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ShopCart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\GoodsDetail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_MasterLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Pay.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\Information.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\PersonalLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\SetUpSafety.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\Address.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\Order.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\Change.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\ElectronicBill.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\MyCollection.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\BrowserHistory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\Comment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Personal\News.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2484/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SportsDBModelStoreContainer" CdmEntityContainer="SportsDBEntities">
+    <EntitySetMapping Name="Collect">
+      <EntityTypeMapping TypeName="SportsDBModel.Collect">
+        <MappingFragment StoreEntitySet="Collect">
+          <ScalarProperty Name="Collect_id" ColumnName="Collect_id" />
+          <ScalarProperty Name="Collect_ctime" ColumnName="Collect_ctime" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="GoodsInfo_ID" ColumnName="GoodsInfo_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Evaluate">
+      <EntityTypeMapping TypeName="SportsDBModel.Evaluate">
+        <MappingFragment StoreEntitySet="Evaluate">
+          <ScalarProperty Name="eva_id" ColumnName="eva_id" />
+          <ScalarProperty Name="eva_rcontent" ColumnName="eva_rcontent" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="eva_rtime" ColumnName="eva_rtime" />
+          <ScalarProperty Name="manager_id" ColumnName="manager_id" />
+          <ScalarProperty Name="eva_etime" ColumnName="eva_etime" />
+          <ScalarProperty Name="eva_content" ColumnName="eva_content" />
+          <ScalarProperty Name="eva_rank" ColumnName="eva_rank" />
+          <ScalarProperty Name="orderdetails_id" ColumnName="orderdetails_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsE">
+      <EntityTypeMapping TypeName="SportsDBModel.GoodsE">
+        <MappingFragment StoreEntitySet="GoodsE">
+          <ScalarProperty Name="GoodsE_Id" ColumnName="GoodsE_Id" />
+          <ScalarProperty Name="Goods_count" ColumnName="Goods_count" />
+          <ScalarProperty Name="Goods_Color" ColumnName="Goods_Color" />
+          <ScalarProperty Name="Goods_CodeNumber" ColumnName="Goods_CodeNumber" />
+          <ScalarProperty Name="GoodsInfo_Id" ColumnName="GoodsInfo_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsImg">
+      <EntityTypeMapping TypeName="SportsDBModel.GoodsImg">
+        <MappingFragment StoreEntitySet="GoodsImg">
+          <ScalarProperty Name="GoodsImg_id" ColumnName="GoodsImg_id" />
+          <ScalarProperty Name="GoodsImg_thumbone" ColumnName="GoodsImg_thumbone" />
+          <ScalarProperty Name="GoodsImg_thumbone_big" ColumnName="GoodsImg_thumbone_big" />
+          <ScalarProperty Name="GoodsImg_thumbtwo" ColumnName="GoodsImg_thumbtwo" />
+          <ScalarProperty Name="GoodsImg_thumbtwo_big" ColumnName="GoodsImg_thumbtwo_big" />
+          <ScalarProperty Name="GoodsImg_thumbthree" ColumnName="GoodsImg_thumbthree" />
+          <ScalarProperty Name="GoodsImg_thumbthree_big" ColumnName="GoodsImg_thumbthree_big" />
+          <ScalarProperty Name="GoodsImg_detail" ColumnName="GoodsImg_detail" />
+          <ScalarProperty Name="Goods_id" ColumnName="Goods_id" />
+          <ScalarProperty Name="Goods_color" ColumnName="Goods_color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsInfo">
+      <EntityTypeMapping TypeName="SportsDBModel.GoodsInfo">
+        <MappingFragment StoreEntitySet="GoodsInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="GoodsName" ColumnName="GoodsName" />
+          <ScalarProperty Name="Goods_number" ColumnName="Goods_number" />
+          <ScalarProperty Name="GoodsURL" ColumnName="GoodsURL" />
+          <ScalarProperty Name="Goods_remark" ColumnName="Goods_remark" />
+          <ScalarProperty Name="Goods_price" ColumnName="Goods_price" />
+          <ScalarProperty Name="Goods_addtime" ColumnName="Goods_addtime" />
+          <ScalarProperty Name="Goods_recommend" ColumnName="Goods_recommend" />
+          <ScalarProperty Name="Goods_grounding" ColumnName="Goods_grounding" />
+          <ScalarProperty Name="Goods_filed" ColumnName="Goods_filed" />
+          <ScalarProperty Name="Goods_season" ColumnName="Goods_season" />
+          <ScalarProperty Name="Goods_isDel" ColumnName="Goods_isDel" />
+          <ScalarProperty Name="StoreInfo_ID" ColumnName="StoreInfo_ID" />
+          <ScalarProperty Name="GoodsType_ID" ColumnName="GoodsType_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsType">
+      <EntityTypeMapping TypeName="SportsDBModel.GoodsType">
+        <MappingFragment StoreEntitySet="GoodsType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logistics">
+      <EntityTypeMapping TypeName="SportsDBModel.Logistics">
+        <MappingFragment StoreEntitySet="Logistics">
+          <ScalarProperty Name="Log_ID" ColumnName="Log_ID" />
+          <ScalarProperty Name="Log_name" ColumnName="Log_name" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Log_adrees" ColumnName="Log_adrees" />
+          <ScalarProperty Name="Log_tel" ColumnName="Log_tel" />
+          <ScalarProperty Name="order_no" ColumnName="order_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoticeInfo">
+      <EntityTypeMapping TypeName="SportsDBModel.NoticeInfo">
+        <MappingFragment StoreEntitySet="NoticeInfo">
+          <ScalarProperty Name="announcement_id" ColumnName="announcement_id" />
+          <ScalarProperty Name="announcement_title" ColumnName="announcement_title" />
+          <ScalarProperty Name="announcement_content" ColumnName="announcement_content" />
+          <ScalarProperty Name="manager_id" ColumnName="manager_id" />
+          <ScalarProperty Name="announcement_time" ColumnName="announcement_time" />
+          <ScalarProperty Name="announcement_isDel" ColumnName="announcement_isDel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShopManagement">
+      <EntityTypeMapping TypeName="SportsDBModel.ShopManagement">
+        <MappingFragment StoreEntitySet="ShopManagement">
+          <ScalarProperty Name="StoreInfo_ID" ColumnName="StoreInfo_ID" />
+          <ScalarProperty Name="cart_remark" ColumnName="cart_remark" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="cart_addtime" ColumnName="cart_addtime" />
+          <ScalarProperty Name="cart_photo" ColumnName="cart_photo" />
+          <ScalarProperty Name="cart_quantity" ColumnName="cart_quantity" />
+          <ScalarProperty Name="cart_color" ColumnName="cart_color" />
+          <ScalarProperty Name="cart_CodeNumber" ColumnName="cart_CodeNumber" />
+          <ScalarProperty Name="GoodsInfo_ID" ColumnName="GoodsInfo_ID" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="cart_price" ColumnName="cart_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreInfo">
+      <EntityTypeMapping TypeName="SportsDBModel.StoreInfo">
+        <MappingFragment StoreEntitySet="StoreInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="StoreURL" ColumnName="StoreURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreInfo_X_GoodsType">
+      <EntityTypeMapping TypeName="SportsDBModel.StoreInfo_X_GoodsType">
+        <MappingFragment StoreEntitySet="StoreInfo_X_GoodsType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StoreInfoId" ColumnName="StoreInfoId" />
+          <ScalarProperty Name="GoodsTypeId" ColumnName="GoodsTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_AddressInfo">
+      <EntityTypeMapping TypeName="SportsDBModel.tbl_AddressInfo">
+        <MappingFragment StoreEntitySet="tbl_AddressInfo">
+          <ScalarProperty Name="address_detail" ColumnName="address_detail" />
+          <ScalarProperty Name="address_qu" ColumnName="address_qu" />
+          <ScalarProperty Name="address_city" ColumnName="address_city" />
+          <ScalarProperty Name="address_shengfen" ColumnName="address_shengfen" />
+          <ScalarProperty Name="address_Id" ColumnName="address_Id" />
+          <ScalarProperty Name="address_isDefault" ColumnName="address_isDefault" />
+          <ScalarProperty Name="address_street" ColumnName="address_street" />
+          <ScalarProperty Name="address_telephone" ColumnName="address_telephone" />
+          <ScalarProperty Name="address_name" ColumnName="address_name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="address_isDel" ColumnName="address_isDel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_manager">
+      <EntityTypeMapping TypeName="SportsDBModel.tbl_manager">
+        <MappingFragment StoreEntitySet="tbl_manager">
+          <ScalarProperty Name="manager_id" ColumnName="manager_id" />
+          <ScalarProperty Name="manager_name" ColumnName="manager_name" />
+          <ScalarProperty Name="manager_pwd" ColumnName="manager_pwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TurnsImg">
+      <EntityTypeMapping TypeName="SportsDBModel.TurnsImg">
+        <MappingFragment StoreEntitySet="TurnsImg">
+          <ScalarProperty Name="alternatePlay_id" ColumnName="alternatePlay_id" />
+          <ScalarProperty Name="alternatePlay_img" ColumnName="alternatePlay_img" />
+          <ScalarProperty Name="alternatePlay_time" ColumnName="alternatePlay_time" />
+          <ScalarProperty Name="alternatePlay_isDel" ColumnName="alternatePlay_isDel" />
+          <ScalarProperty Name="GoodsInfo_ID" ColumnName="GoodsInfo_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="SportsDBModel.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="user_password" ColumnName="user_password" />
+          <ScalarProperty Name="user_status" ColumnName="user_status" />
+          <ScalarProperty Name="user_createTime" ColumnName="user_createTime" />
+          <ScalarProperty Name="store_id" ColumnName="store_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoodsTypeInfo">
+      <EntityTypeMapping TypeName="SportsDBModel.GoodsTypeInfo">
+        <MappingFragment StoreEntitySet="GoodsTypeInfo">
+          <ScalarProperty Name="Typeremark" ColumnName="Typeremark" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="GoodsType_Id" ColumnName="GoodsType_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderBySeller">
+      <EntityTypeMapping TypeName="SportsDBModel.OrderBySeller">
+        <MappingFragment StoreEntitySet="OrderBySeller">
+          <ScalarProperty Name="order_makedtime" ColumnName="order_makedtime" />
+          <ScalarProperty Name="order_shiptime" ColumnName="order_shiptime" />
+          <ScalarProperty Name="order_paytime" ColumnName="order_paytime" />
+          <ScalarProperty Name="order_no" ColumnName="order_no" />
+          <ScalarProperty Name="GoodsInfo_ID" ColumnName="GoodsInfo_ID" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="order_cost" ColumnName="order_cost" />
+          <ScalarProperty Name="orderdetails_status" ColumnName="orderdetails_status" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="order_createTime" ColumnName="order_createTime" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_orderdetailsInfo">
+      <EntityTypeMapping TypeName="SportsDBModel.tbl_orderdetailsInfo">
+        <MappingFragment StoreEntitySet="tbl_orderdetailsInfo">
+          <ScalarProperty Name="UserInfo_id" ColumnName="UserInfo_id" />
+          <ScalarProperty Name="StoreInfo_ID" ColumnName="StoreInfo_ID" />
+          <ScalarProperty Name="orderdetails_price" ColumnName="orderdetails_price" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="GoodsInfo_id" ColumnName="GoodsInfo_id" />
+          <ScalarProperty Name="orderdetails_unitprice" ColumnName="orderdetails_unitprice" />
+          <ScalarProperty Name="cart_remark" ColumnName="cart_remark" />
+          <ScalarProperty Name="cart_photo" ColumnName="cart_photo" />
+          <ScalarProperty Name="cart_CodeNumber" ColumnName="cart_CodeNumber" />
+          <ScalarProperty Name="cart_color" ColumnName="cart_color" />
+          <ScalarProperty Name="orderdetails_quantity" ColumnName="orderdetails_quantity" />
+          <ScalarProperty Name="orderdetails_totalprice" ColumnName="orderdetails_totalprice" />
+          <ScalarProperty Name="orderdetails_id" ColumnName="orderdetails_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="History">
+      <EntityTypeMapping TypeName="SportsDBModel.History">
+        <MappingFragment StoreEntitySet="History">
+          <ScalarProperty Name="GoodsInfo_ID" ColumnName="GoodsInfo_ID" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="footmark_browsing_time" ColumnName="footmark_browsing_time" />
+          <ScalarProperty Name="footmark_id" ColumnName="footmark_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfo_detail">
+      <EntityTypeMapping TypeName="SportsDBModel.UserInfo_detail">
+        <MappingFragment StoreEntitySet="UserInfo_detail">
+          <ScalarProperty Name="user_remark" ColumnName="user_remark" />
+          <ScalarProperty Name="user_money" ColumnName="user_money" />
+          <ScalarProperty Name="user_photo" ColumnName="user_photo" />
+          <ScalarProperty Name="user_qq" ColumnName="user_qq" />
+          <ScalarProperty Name="user_idcard" ColumnName="user_idcard" />
+          <ScalarProperty Name="user_telphone" ColumnName="user_telphone" />
+          <ScalarProperty Name="user_email" ColumnName="user_email" />
+          <ScalarProperty Name="user_sex" ColumnName="user_sex" />
+          <ScalarProperty Name="user_nickname" ColumnName="user_nickname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="detailId" ColumnName="detailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_county">
+      <EntityTypeMapping TypeName="SportsDBModel.tbl_county">
+        <MappingFragment StoreEntitySet="tbl_county">
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="county_name" ColumnName="county_name" />
+          <ScalarProperty Name="county_id" ColumnName="county_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_province">
+      <EntityTypeMapping TypeName="SportsDBModel.tbl_province">
+        <MappingFragment StoreEntitySet="tbl_province">
+          <ScalarProperty Name="pro_name" ColumnName="pro_name" />
+          <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_city">
+      <EntityTypeMapping TypeName="SportsDBModel.tbl_city">
+        <MappingFragment StoreEntitySet="tbl_city">
+          <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

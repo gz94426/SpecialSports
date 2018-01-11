@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SportsDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SportsDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Collect" EntityType="SportsDBModel.Collect" />
+    <EntitySet Name="Evaluate" EntityType="SportsDBModel.Evaluate" />
+    <EntitySet Name="GoodsE" EntityType="SportsDBModel.GoodsE" />
+    <EntitySet Name="GoodsImg" EntityType="SportsDBModel.GoodsImg" />
+    <EntitySet Name="GoodsInfo" EntityType="SportsDBModel.GoodsInfo" />
+    <EntitySet Name="GoodsType" EntityType="SportsDBModel.GoodsType" />
+    <EntitySet Name="Logistics" EntityType="SportsDBModel.Logistics" />
+    <EntitySet Name="NoticeInfo" EntityType="SportsDBModel.NoticeInfo" />
+    <EntitySet Name="ShopManagement" EntityType="SportsDBModel.ShopManagement" />
+    <EntitySet Name="StoreInfo" EntityType="SportsDBModel.StoreInfo" />
+    <EntitySet Name="StoreInfo_X_GoodsType" EntityType="SportsDBModel.StoreInfo_X_GoodsType" />
+    <EntitySet Name="tbl_AddressInfo" EntityType="SportsDBModel.tbl_AddressInfo" />
+    <EntitySet Name="tbl_manager" EntityType="SportsDBModel.tbl_manager" />
+    <EntitySet Name="TurnsImg" EntityType="SportsDBModel.TurnsImg" />
+    <EntitySet Name="UserInfo" EntityType="SportsDBModel.UserInfo" />
+    <EntitySet Name="GoodsTypeInfo" EntityType="SportsDBModel.GoodsTypeInfo" />
+    <EntitySet Name="OrderBySeller" EntityType="SportsDBModel.OrderBySeller" />
+    <EntitySet Name="tbl_orderdetailsInfo" EntityType="SportsDBModel.tbl_orderdetailsInfo" />
+    <EntitySet Name="History" EntityType="SportsDBModel.History" />
+    <EntitySet Name="UserInfo_detail" EntityType="SportsDBModel.UserInfo_detail" />
+    <EntitySet Name="tbl_county" EntityType="SportsDBModel.tbl_county" />
+    <EntitySet Name="tbl_province" EntityType="SportsDBModel.tbl_province" />
+    <EntitySet Name="tbl_city" EntityType="SportsDBModel.tbl_city" />
+  </EntityContainer>
+  <EntityType Name="Collect">
+    <Key>
+      <PropertyRef Name="Collect_id" />
+    </Key>
+    <Property Name="Collect_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Collect_ctime" Type="DateTime" Precision="3" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="GoodsInfo_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Evaluate">
+    <Key>
+      <PropertyRef Name="eva_id" />
+    </Key>
+    <Property Name="eva_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="eva_rcontent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="eva_rtime" Type="DateTime" Precision="3" />
+    <Property Name="manager_id" Type="Int32" />
+    <Property Name="eva_etime" Type="DateTime" Precision="3" />
+    <Property Name="eva_content" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="eva_rank" Type="Int32" />
+    <Property Name="orderdetails_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GoodsE">
+    <Key>
+      <PropertyRef Name="GoodsE_Id" />
+    </Key>
+    <Property Name="GoodsE_Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Goods_count" Type="Int32" />
+    <Property Name="Goods_Color" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Goods_CodeNumber" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="GoodsInfo_Id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GoodsImg">
+    <Key>
+      <PropertyRef Name="GoodsImg_id" />
+    </Key>
+    <Property Name="GoodsImg_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="GoodsImg_thumbone" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="GoodsImg_thumbone_big" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="GoodsImg_thumbtwo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="GoodsImg_thumbtwo_big" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="GoodsImg_thumbthree" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="GoodsImg_thumbthree_big" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="GoodsImg_detail" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Goods_id" Type="Int32" />
+    <Property Name="Goods_color" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="GoodsInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="GoodsName" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="Goods_number" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="GoodsURL" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="Goods_remark" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Goods_price" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="Goods_addtime" Type="DateTime" Precision="3" />
+    <Property Name="Goods_recommend" Type="Int32" />
+    <Property Name="Goods_grounding" Type="Int32" />
+    <Property Name="Goods_filed" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Goods_season" Type="Int32" />
+    <Property Name="Goods_isDel" Type="Int32" />
+    <Property Name="StoreInfo_ID" Type="Int32" />
+    <Property Name="GoodsType_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GoodsType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Logistics">
+    <Key>
+      <PropertyRef Name="Log_ID" />
+    </Key>
+    <Property Name="Log_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Log_name" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="username" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="Log_adrees" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="Log_tel" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="order_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="NoticeInfo">
+    <Key>
+      <PropertyRef Name="announcement_id" />
+    </Key>
+    <Property Name="announcement_id" Type="Int32" Nullable="false" />
+    <Property Name="announcement_title" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="announcement_content" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="manager_id" Type="Int32" />
+    <Property Name="announcement_time" Type="DateTime" Precision="3" />
+    <Property Name="announcement_isDel" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ShopManagement">
+    <Key>
+      <PropertyRef Name="cart_id" />
+    </Key>
+    <Property Name="cart_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="cart_addtime" Type="DateTime" Precision="3" />
+    <Property Name="cart_photo" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="cart_quantity" Type="Int32" />
+    <Property Name="cart_color" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="cart_CodeNumber" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="GoodsInfo_ID" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="cart_price" Type="Decimal" Precision="8" Scale="2" />
+    <Property Type="String" Name="cart_remark" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="StoreInfo_ID" />
+  </EntityType>
+  <EntityType Name="StoreInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="StoreName" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="StoreURL" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="StoreInfo_X_GoodsType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreInfoId" Type="Int32" Nullable="false" />
+    <Property Name="GoodsTypeId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_AddressInfo">
+    <Key>
+      <PropertyRef Name="address_Id" />
+    </Key>
+    <Property Name="address_Id" Type="Int32" Nullable="false" />
+    <Property Name="address_isDefault" Type="Int32" />
+    <Property Name="address_street" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="address_telephone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="address_name" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="address_isDel" Type="Int32" />
+    <Property Type="String" Name="address_shengfen" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="address_city" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="address_qu" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="address_detail" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_manager">
+    <Key>
+      <PropertyRef Name="manager_id" />
+    </Key>
+    <Property Name="manager_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="manager_name" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="manager_pwd" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TurnsImg">
+    <Key>
+      <PropertyRef Name="alternatePlay_id" />
+    </Key>
+    <Property Name="alternatePlay_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="alternatePlay_img" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="alternatePlay_time" Type="DateTime" Precision="3" />
+    <Property Name="alternatePlay_isDel" Type="Int32" />
+    <Property Name="GoodsInfo_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="user_password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="user_status" Type="Int32" />
+    <Property Name="user_createTime" Type="DateTime" Precision="3" />
+    <Property Name="store_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="GoodsTypeInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="GoodsType_Id" />
+    <Property Type="String" Name="TypeName" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Typeremark" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="OrderBySeller">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Type="Int32" Name="order_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="order_createTime" Precision="3" />
+    <Property Type="Int32" Name="order_status" />
+    <Property Type="Int32" Name="orderdetails_status" />
+    <Property Type="Decimal" Name="order_cost" Precision="8" Scale="2" />
+    <Property Type="Int32" Name="userid" />
+    <Property Type="Int32" Name="GoodsInfo_ID" />
+    <Property Type="String" Name="order_no" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="order_paytime" Precision="3" />
+    <Property Type="DateTime" Name="order_shiptime" Precision="3" />
+    <Property Type="DateTime" Name="order_makedtime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_orderdetailsInfo">
+    <Key>
+      <PropertyRef Name="orderdetails_id" />
+    </Key>
+    <Property Type="Int32" Name="orderdetails_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="orderdetails_totalprice" Precision="8" Scale="2" />
+    <Property Type="Int32" Name="orderdetails_quantity" />
+    <Property Type="String" Name="cart_color" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="cart_CodeNumber" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="cart_photo" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="cart_remark" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="orderdetails_unitprice" Precision="8" Scale="2" />
+    <Property Type="Int32" Name="GoodsInfo_id" />
+    <Property Type="Int32" Name="order_id" />
+    <Property Type="Decimal" Name="orderdetails_price" Precision="8" Scale="2" />
+    <Property Type="Int32" Name="StoreInfo_ID" />
+    <Property Type="Int32" Name="UserInfo_id" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="footmark_id" />
+    </Key>
+    <Property Type="Int32" Name="footmark_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="footmark_browsing_time" Precision="3" />
+    <Property Type="Int32" Name="userid" />
+    <Property Type="Int32" Name="GoodsInfo_ID" />
+  </EntityType>
+  <EntityType Name="UserInfo_detail">
+    <Key>
+      <PropertyRef Name="detailId" />
+    </Key>
+    <Property Type="Int32" Name="detailId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="userid" />
+    <Property Type="String" Name="username" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="user_nickname" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="user_sex" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="user_email" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="user_telphone" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="user_idcard" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="user_qq" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="user_photo" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="user_money" Precision="8" Scale="2" />
+    <Property Type="String" Name="user_remark" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_county">
+    <Key>
+      <PropertyRef Name="county_id" />
+    </Key>
+    <Property Type="Int32" Name="county_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="county_name" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="city_id" />
+  </EntityType>
+  <EntityType Name="tbl_province">
+    <Key>
+      <PropertyRef Name="pro_id" />
+    </Key>
+    <Property Type="Int32" Name="pro_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="pro_name" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_city">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Type="Int32" Name="city_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="city_name" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="pro_id" />
+  </EntityType>
+</Schema>

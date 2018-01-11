@@ -1,0 +1,1339 @@
+﻿@model List<SpecialSports.GoodsInfo>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_MasterLayout.cshtml";
+}
+@using SpecialSports;
+
+<script src="~/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+<script src="~/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+<script>
+    $(function () {
+        //获取分类详情显示到搜索框中
+        $("dd > a").find("span").click(function () {
+            var str = $(this).html();
+            $.post("/Home/Index", { "str": str }, function () {
+
+            })
+
+        })
+    })
+</script>
+
+<div id="f1">
+    <!--衣服-->
+    <div class="am-container ">
+        <div class="shopTitle ">
+            <h4>衣服</h4>
+            <h3>每一件衣服都有一个不同的风格</h3>
+            <div class="today-brands ">
+                <a href="# ">迷彩服</a>
+                <a href="# ">运动衣 </a>
+                <a href="# ">休闲服</a>
+                <a href="# ">T恤</a>
+                <a href="# ">纯棉短袖</a>
+                <a href="# ">防晒服</a>
+            </div>
+            <span class="more ">
+                <a href="# ">其它<i class="am-icon-angle-right" style="padding-left: 10px;"></i></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="am-g am-g-fixed floodFour">
+        <div class="am-u-sm-5 am-u-md-4 text-one list ">
+            <div class="word">
+                <a class="outer" href="#"><span class="inner"><b class="text">旅行</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">沙滩</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">爬山</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">特训</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户内</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户外</b></span></a>
+            </div>
+            <a href="# ">
+                <div class="outer-con ">
+                    <div class="title ">
+                        开抢啦！
+                    </div>
+                    <div class="sub-title ">
+                    </div>
+                </div>
+                <img src="~/DianPimg/man.png" />
+            </a>
+            <div class="triangle-topright"></div>
+        </div>
+        @{
+            foreach (GoodsInfo g in Model)
+            {
+            <div class="am-u-sm-7 am-u-md-4 text-two">
+                <div class="outer-con ">
+                    <div class="title ">
+                        @g.GoodsName
+                    </div>
+                    <div class="sub-title ">
+                        ￥@g.Goods_price
+                    </div>
+                    <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                </div>
+
+                <a href="/home/goodsdetail?id=@g.Id">
+                    <img src="~/img/@g.GoodsURL" /></a>
+            </div>
+
+            }
+        }
+    </div>
+    <div class="clear "></div>
+</div>
+
+<div id="f2">
+    <!--裤子-->
+    <div class="am-container ">
+        <div class="shopTitle ">
+            <h4>裤子</h4>
+            <h3>轻轻松松，运动无限</h3>
+            <div class="today-brands ">
+                <a href="# ">美津浓</a>
+                <a href="# ">斐乐</a>
+                <a href="# ">特步 </a>
+                <a href="# ">安踏</a>
+                <a href="# ">鸿星尔克</a>
+                <a href="# ">赛琪</a>
+            </div>
+            <span class="more ">
+                <a href="# ">更多品牌<i class="am-icon-angle-right" style="padding-left: 10px;"></i></a>
+            </span>
+        </div>
+    </div>
+    <div class="am-g am-g-fixed floodThree ">
+        <div class="am-u-sm-4 text-four list">
+            <div class="word">
+                <a class="outer" href="#"><span class="inner"><b class="text">旅行</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">沙滩</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">爬山</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">特训</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户内</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户外</b></span></a>
+            </div>
+            <a href="# ">
+                <img src="~/img/kuzi123.jpg" />
+                <div class="outer-con ">
+                    <div class="title ">
+                        雪之恋和风大福
+                    </div>
+                </div>
+            </a>
+            <div class="triangle-topright"></div>
+        </div>
+
+
+
+        @{
+            List<GoodsInfo> Klist = ViewData["Klist"] as List<GoodsInfo>;
+            foreach (GoodsInfo g in Klist)
+            {
+            <div class="am-u-sm-6 am-u-md-3 text-five">
+                <a href="~/Home/GoodsDetail?id=@g.Id">
+                    <img src="~/img/@g.GoodsURL" /></a>
+                <div class="outer-con ">
+                    <div class="title ">
+                        @g.GoodsName
+                    </div>
+                    <div class="sub-title ">
+                        ¥@g.Goods_price
+                    </div>
+                    <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                </div>
+            </div>
+            }
+        }
+
+
+    </div>
+
+    <div class="clear "></div>
+</div>
+
+
+
+
+<div id="f6">
+    <!--运动套装-->
+    <div class="am-container ">
+        <div class="shopTitle ">
+            <h4>运动套装</h4>
+            <h3>守住情意，每天美美搭</h3>
+            <div class="today-brands ">
+                <a href="# ">Adidas</a>
+                <a href="# ">NIKE</a>
+                <a href="# ">迪亚多纳 </a>
+                <a href="# ">狼爪</a>
+                <a href="# ">kappa</a>
+                <a href="# ">converse</a>
+            </div>
+            <span class="more ">
+                <a href="# ">更多品牌<i class="am-icon-angle-right" style="padding-left: 10px;"></i></a>
+            </span>
+        </div>
+    </div>
+    <div class="am-g am-g-fixed floodThree ">
+        <div class="am-u-sm-4 text-four list">
+            <div class="word">
+                <a class="outer" href="#"><span class="inner"><b class="text">旅行</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">沙滩</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">爬山</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">特训</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户内</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户外</b></span></a>
+            </div>
+            <a href="# ">
+                <img src="~/DianPimg/59e5620dN06a8b861.png" />
+                <div class="outer-con ">
+                    <div class="title ">
+                        Adidas
+                    </div>
+                </div>
+            </a>
+            <div class="triangle-topright"></div>
+        </div>
+
+        @{
+            List<GoodsInfo> Tlist = ViewData["Tlist"] as List<GoodsInfo>;
+            foreach (GoodsInfo item in Tlist)
+            {
+                       
+            <div class="am-u-sm-6 am-u-md-3 text-five">
+                <a href="~/Home/GoodsDetail?id=@item.Id">
+                    <img src="~/img/@item.GoodsURL" />
+                    <div class="outer-con ">
+                        <div class="title ">
+                            @item.GoodsName
+
+                        </div>
+                        <div class="sub-title ">
+                            ¥@item.Goods_price
+                        </div>
+                        <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                    </div>
+                </a>
+            </div>
+                       
+            }
+        }
+    </div>
+
+    <div class="clear "></div>
+</div>
+
+<div id="f3">
+
+    <!--鞋子-->
+
+    <div class="am-container ">
+        <div class="shopTitle ">
+            <h4>鞋子</h4>
+            <h3>不一样的鞋子，跑出不一样的风采</h3>
+            <div class="today-brands ">
+                <a href="# ">美津浓</a>
+                <a href="# ">斐乐</a>
+                <a href="# ">特步 </a>
+                <a href="# ">安踏</a>
+                <a href="# ">鸿星尔克</a>
+                <a href="# ">赛琪</a>
+            </div>
+            <span class="more ">
+                <a href="# ">更多品牌<i class="am-icon-angle-right" style="padding-left: 10px;"></i></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="am-g am-g-fixed floodFour">
+        <div class="am-u-sm-5 am-u-md-4 text-one list ">
+            <div class="word">
+                <a class="outer" href="#"><span class="inner"><b class="text">旅行</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">沙滩</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">爬山</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">特训</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户内</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户外</b></span></a>
+            </div>
+            <a href="# ">
+                <div class="outer-con ">
+                    <div class="title ">
+                        开抢啦！
+                    </div>
+                    <div class="sub-title ">
+                    </div>
+                </div>
+                <img src="~/DianPimg/Xiezi.png" />
+            </a>
+            <div class="triangle-topright"></div>
+        </div>
+        @{
+            List<GoodsInfo> Xlist = ViewData["Xlist"] as List<GoodsInfo>;
+            foreach (GoodsInfo item in Xlist)
+            {
+                
+            <div class="am-u-sm-7 am-u-md-4 text-two">
+                <div class="outer-con ">
+                    <div class="title ">
+                        @item.GoodsName
+                    </div>
+                    <div class="sub-title ">
+                        ¥@item.Goods_price
+                    </div>
+                    <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                </div>
+                <a href="~/Home/GoodsDetail?id=@item.Id">
+                    <img src="~/img/@item.GoodsURL" />
+                </a>
+            </div>
+                            
+            }
+        }
+    </div>
+    <div class="clear "></div>
+</div>
+
+<div id="f4">
+    <!--运动用品-->
+    <div class="am-container ">
+        <div class="shopTitle ">
+            <h4>运动用品</h4>
+            <h3>轻轻松松，完美身材</h3>
+            <div class="today-brands ">
+                <a href="# ">运动球类</a>
+                <a href="# ">室内健身</a>
+                <a href="# ">室外健身 </a>
+                <a href="# ">瑜伽用品</a>
+                <a href="# ">减肥用品</a>
+                <a href="# ">爬山用品</a>
+            </div>
+            <span class="more ">
+                <a href="# ">其它<i class="am-icon-angle-right" style="padding-left: 10px;"></i></a>
+            </span>
+        </div>
+    </div>
+    <div class="am-g am-g-fixed floodThree ">
+        <div class="am-u-sm-4 text-four list">
+            <div class="word">
+                <a class="outer" href="#"><span class="inner"><b class="text">旅行</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">沙滩</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">爬山</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">特训</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户内</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户外</b></span></a>
+            </div>
+            <a href="# ">
+                <img src="~/DianPimg/woman.png" />
+                <div class="outer-con ">
+                    <div class="title ">
+                        雪之恋的瑜伽用品
+                    </div>
+                </div>
+            </a>
+            <div class="triangle-topright"></div>
+        </div>
+
+        @{
+            List<GoodsInfo> qclist = ViewData["QClist"] as List<GoodsInfo>;
+            foreach (GoodsInfo item in qclist)
+            {
+                            
+                       
+            <div class="am-u-sm-4 text-four">
+                <a href="~/Home/GoodsDetail?id=@item.Id">
+                    <img src="~/img/@item.GoodsURL" />
+                    <div class="outer-con ">
+                        <div class="title ">
+                            @item.GoodsName
+                        </div>
+                        <div class="sub-title ">
+                            ¥@item.Goods_price
+                        </div>
+                        <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                    </div>
+                </a>
+            </div>
+            }
+        }
+
+    </div>
+
+    <div class="clear "></div>
+</div>
+
+
+<div id="f5">
+    <!--帽子-->
+
+    <div class="am-container ">
+        <div class="shopTitle ">
+            <h4>帽子</h4>
+            <h3>每一顶帽子都有不一样的光环</h3>
+            <div class="today-brands ">
+                <a href="# ">棒球帽</a>
+                <a href="# ">鸭舌帽</a>
+                <a href="# ">针织帽 </a>
+                <a href="# ">八角帽</a>
+                <a href="# ">爵士帽</a>
+                <a href="# ">太阳帽</a>
+            </div>
+            <span class="more ">
+                <a href="# ">更多帽子<i class="am-icon-angle-right" style="padding-left: 10px;"></i></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="am-g am-g-fixed floodFour">
+        <div class="am-u-sm-5 am-u-md-4 text-one list ">
+            <div class="word">
+                <a class="outer" href="#"><span class="inner"><b class="text">旅行</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">沙滩</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">爬山</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">特训</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户内</b></span></a>
+                <a class="outer" href="#"><span class="inner"><b class="text">户外</b></span></a>
+            </div>
+            <a href="# ">
+                @*<div class="outer-con ">
+                                <div class="title ">
+                                    开抢啦！
+                                </div>
+                                <div class="sub-title ">
+                                    零食大礼包
+                                </div>
+                            </div>*@
+                <img src="~/DianPimg/hat.png" />
+            </a>
+            <div class="triangle-topright"></div>
+        </div>
+
+        @{
+            List<GoodsInfo> Qlist = ViewData["Qlist"] as List<GoodsInfo>;
+            foreach (GoodsInfo item in Qlist)
+            {
+                     
+            <div class="am-u-sm-4 text-two">
+                <div class="outer-con ">
+                    <div class="title ">
+                        @item.GoodsName
+                    </div>
+                    <div class="sub-title ">
+                        ¥@item.Goods_price
+                    </div>
+                    <i class="am-icon-shopping-basket am-icon-md  seprate"></i>
+                </div>
+                <a href="~/Home/GoodsDetail?id=@item.Id">
+                    <img src="~/img/@item.GoodsURL" /></a>
+            </div>
+                       
+            }
+        }
+
+    </div>
+    <div class="clear "></div>
+</div>
+@section bodySection{
+
+    <div class="banner">
+        <!--轮播 -->
+        <div class="am-slider am-slider-default scoll" data-am-flexslider id="demo-slider-0">
+            <ul class="am-slides">
+                <li class="banner1"><a href="introduction.html">
+                    <img src="~/img/1.jpg" /></a></li>
+                <li class="banner2"><a>
+                    <img src="~/img/4.jpg" /></a></li>
+                <li class="banner3"><a>
+                    <img src="~/img/2.jpg" /></a></li>
+                <li class="banner4"><a>
+                    <img src="~/img/5.jpg" /></a></li>
+
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="shopNav">
+        <div class="slideall">
+
+            <div class="long-title"><span class="all-goods">全部分类</span></div>
+            <div class="nav-cont">
+                <ul>
+                    <li class="index"><a href="http://localhost:2484/">首页</a></li>
+                    <li class="qc"><a href="#">闪购</a></li>
+                    <li class="qc"><a href="#">限时抢</a></li>
+                    <li class="qc"><a href="#">团购</a></li>
+                    <li class="qc last"><a href="#">大包装</a></li>
+                </ul>
+                <div class="nav-extra">
+                    <i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
+						    	<i class="am-icon-angle-right" style="padding-left: 10px;"></i>
+                </div>
+            </div>
+
+            <!--侧边导航 -->
+            <div id="nav" class="navfull">
+                <div class="area clearfix">
+                    <div class="category-content" id="guide_2">
+
+                        <div class="category">
+                            <ul class="category-list" id="js_climit_li">
+                                <li class="appliance js_toggle relative first">
+                                    <div class="category-info">
+                                        <h3 class="category-name b-category-name"><i>
+                                            <img src="~/images/chocolate.png" /></i><a class="ml-22" title="衣服/春秋">衣服/四季</a></h3>
+                                        <em>&gt;</em>
+                                    </div>
+                                    <div class="menu-item menu-in top">
+                                        <div class="area-in">
+                                            <div class="area-bg">
+                                                <div class="menu-srot">
+                                                    <div class="sort-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="春季">春季</span></dt>
+                                                            <dd><a title="运动装" href="#"><span>运动装</span></a></dd>
+                                                            <dd><a title="羽绒服" href="#"><span>羽绒服</span></a></dd>
+                                                            <dd><a title="休闲装" href="#"><span>休闲装</span></a></dd>
+                                                            <dd><a title="针织衫" href="#"><span>针织衫</span></a></dd>
+                                                            <dd><a title="打底衫" href="#"><span>打底衫</span></a></dd>
+                                                            <dd><a title="棉衣棉服" href="#"><span>棉衣棉服</span></a></dd>
+                                                            <dd><a title="绒布材质" href="#"><span>绒布材质</span></a></dd>
+                                                            <dd><a title="其他" href="#"><span>其他</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="夏季">夏季</span></dt>
+                                                            <dd><a title="T恤" href="#"><span>T恤</span></a></dd>
+                                                            <dd><a title="白衬衫" href="#"><span>白衬衫</span></a></dd>
+                                                            <dd><a title="纯棉短袖" href="#"><span>纯棉短袖</span></a></dd>
+                                                            <dd><a title="运动衫" href="#"><span>运动衫</span></a></dd>
+                                                            <dd><a title="休闲服" href="#"><span>休闲服</span></a></dd>
+                                                            <dd><a title="防晒服" href="#"><span>防晒服</span></a></dd>
+                                                            <dd><a title="迷彩服" href="#"><span>迷彩服</span></a></dd>
+                                                            <dd><a title="格子衫" href="#"><span>格子衫</span></a></dd>
+                                                            <dd><a title="其他" href="#"><span>其他</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="秋季">秋季</span></dt>
+                                                            <dd><a title="运动装" href="#"><span>时尚运动装</span></a></dd>
+                                                            <dd><a title="休闲装" href="#"><span>休闲气质装</span></a></dd>
+                                                            <dd><a title="针织衫" href="#"><span>针织衫</span></a></dd>
+                                                            <dd><a title="打底衫" href="#"><span>打底衫</span></a></dd>
+                                                            <dd><a title="针织衫" href="#"><span>衬衫</span></a></dd>
+                                                            <dd><a title="打底衫" href="#"><span>毛衣</span></a></dd>
+                                                            <dd><a title="棉衣棉服" href="#"><span>棉衣棉服</span></a></dd>
+                                                            <dd><a title="绒布材质" href="#"><span>绒布材质</span></a></dd>
+                                                            <dd><a title="其他" href="#"><span>其他</span></a></dd>
+                                                        </dl>
+
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="冬季">冬季</span></dt>
+                                                            <dd><a title="冬季运动装" href="#"><span>冬季运动装</span></a></dd>
+                                                            <dd><a title="太空羽绒服" href="#"><span>太空羽绒服</span></a></dd>
+                                                            <dd><a title="加绒休闲装" href="#"><span>加绒休闲装</span></a></dd>
+                                                            <dd><a title="毛呢针织衫" href="#"><span>毛呢针织衫</span></a></dd>
+                                                            <dd><a title="休闲打底衫" href="#"><span>休闲打底衫</span></a></dd>
+                                                            <dd><a title="棉衣棉服" href="#"><span>棉衣棉服</span></a></dd>
+                                                            <dd><a title="绒布材质" href="#"><span>绒布材质</span></a></dd>
+                                                            <dd><a title="其他" href="#"><span>其他</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="brand-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span>实力商家</span></dt>
+                                                            <dd><a rel="nofollow" title="呵官方旗舰店" target="_blank" href="#" rel="nofollow"><span class="red">呵官方旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="格瑞旗舰店" target="_blank" href="#" rel="nofollow"><span>格瑞旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="飞彦大厂直供" target="_blank" href="#" rel="nofollow"><span class="red">飞彦大厂直供</span></a></dd>
+                                                            <dd><a rel="nofollow" title="红e·艾菲妮" target="_blank" href="#" rel="nofollow"><span>红e·艾菲妮</span></a></dd>
+                                                            <dd><a rel="nofollow" title="本真旗舰店" target="_blank" href="#" rel="nofollow"><span class="red">本真旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="杭派女装批发网" target="_blank" href="#" rel="nofollow"><span class="red">杭派女装批发网</span></a></dd>
+                                                        </dl>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b class="arrow"></b>
+                                </li>
+                                <li class="appliance js_toggle relative">
+                                    <div class="category-info">
+                                        <h3 class="category-name b-category-name"><i>
+                                            <img src="~/images/chocolate.png"></i><a class="ml-22" title="鞋子/四季">鞋子/四季</a></h3>
+                                        <em>&gt;</em>
+                                    </div>
+                                    <div class="menu-item menu-in top">
+                                        <div class="area-in">
+                                            <div class="area-bg">
+                                                <div class="menu-srot">
+                                                    <div class="sort-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="春秋">春秋</span></dt>
+                                                            <dd><a title="透气运动鞋" href="#"><span>透气运动鞋</span></a></dd>
+                                                            <dd><a title="帆布鞋" href="#"><span>帆布鞋</span></a></dd>
+                                                            <dd><a title="板鞋" href="#"><span>板鞋</span></a></dd>
+                                                            <dd><a title="松糕鞋" href="#"><span>松糕鞋</span></a></dd>
+                                                            <dd><a title="帆船鞋" href="#"><span>帆船鞋</span></a></dd>
+                                                            <dd><a title="休闲鞋" href="#"><span>休闲鞋</span></a></dd>
+                                                            <dd><a title="马丁鞋" href="#"><span>马丁鞋</span></a></dd>
+                                                            <dd><a title="懒人鞋" href="#"><span>懒人鞋</span></a></dd>
+                                                            <dd><a title="公主鞋" href="#"><span>公主鞋</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="夏季">夏季</span></dt>
+                                                            <dd><a title="凉鞋" href="#"><span>凉鞋</span></a></dd>
+                                                            <dd><a title="帆布鞋" href="#"><span>帆布鞋</span></a></dd>
+                                                            <dd><a title="船鞋" href="#"><span>船鞋</span></a></dd>
+                                                            <dd><a title="马丁靴" href="#"><span>马丁靴</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="冬季">冬季</span></dt>
+                                                            <dd><a title="豆豆鞋" href="#"><span>豆豆鞋</span></a></dd>
+                                                            <dd><a title="马丁靴" href="#"><span>马丁靴</span></a></dd>
+                                                            <dd><a title="松糕鞋" href="#"><span>松糕鞋</span></a></dd>
+                                                            <dd><a title="牛津鞋" href="#"><span>牛津鞋</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="brand-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span>实力商家</span></dt>
+                                                            <dd><a rel="nofollow" title="歌芙品牌旗舰店" target="_blank" href="#" rel="nofollow"><span class="red">歌芙品牌旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="爱丝蓝内衣厂" target="_blank" href="#" rel="nofollow"><span>爱丝蓝内衣厂</span></a></dd>
+                                                            <dd><a rel="nofollow" title="炫点服饰" target="_blank" href="#" rel="nofollow"><span>炫点服饰</span></a></dd>
+                                                            <dd><a rel="nofollow" title="雪茵美内衣厂批发" target="_blank" href="#" rel="nofollow"><span>雪茵美内衣厂批发</span></a></dd>
+                                                            <dd><a rel="nofollow" title="金钻夫人" target="_blank" href="#" rel="nofollow"><span>金钻夫人</span></a></dd>
+                                                            <dd><a rel="nofollow" title="伊美莎内衣" target="_blank" href="#" rel="nofollow"><span class="red">伊美莎内衣</span></a></dd>
+                                                            <dd><a rel="nofollow" title="粉客内衣旗舰店" target="_blank" href="#" rel="nofollow"><span>粉客内衣旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="泽芳行旗舰店" target="_blank" href="#" rel="nofollow"><span>泽芳行旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="彩婷" target="_blank" href="#" rel="nofollow"><span class="red">彩婷</span></a></dd>
+                                                            <dd><a rel="nofollow" title="黛兰希" target="_blank" href="#" rel="nofollow"><span>黛兰希</span></a></dd>
+                                                            <dd><a rel="nofollow" title="香港优蓓尔防辐射" target="_blank" href="#" rel="nofollow"><span>香港优蓓尔防辐射</span></a></dd>
+                                                            <dd><a rel="nofollow" title="蓉莉娜内衣批发" target="_blank" href="#" rel="nofollow"><span>蓉莉娜内衣批发</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b class="arrow"></b>
+                                </li>
+                                <li class="appliance js_toggle relative">
+                                    <div class="category-info">
+                                        <h3 class="category-name b-category-name"><i>
+                                            <img src="~/images/chocolate.png"></i><a class="ml-22" title="裤子/四季">裤子/四季</a></h3>
+                                        <em>&gt;</em>
+                                    </div>
+                                    <div class="menu-item menu-in top">
+                                        <div class="area-in">
+                                            <div class="area-bg">
+                                                <div class="menu-srot">
+                                                    <div class="sort-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="春秋">春秋</span></dt>
+                                                            <dd><a title="七分裤" href="#"><span>七分裤</span></a></dd>
+                                                            <dd><a title="九分裤" href="#"><span>九分裤</span></a></dd>
+                                                            <dd><a title="商务休闲裤" href="#"><span>商务休闲裤</span></a></dd>
+                                                            <dd><a title="休闲牛仔" href="#"><span>休闲牛仔</span></a></dd>
+                                                            <dd><a title="紧身裤" href="#"><span>紧身裤</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="夏季">夏季</span></dt>
+                                                            <dd><a title="哈伦裤" href="#"><span>哈伦裤</span></a></dd>
+                                                            <dd><a title="连体裤" href="#"><span>连体裤</span></a></dd>
+                                                            <dd><a title="直筒裤" href="#"><span>直筒裤</span></a></dd>
+                                                            <dd><a title="铅笔裤" href="#"><span>铅笔裤</span></a></dd>
+                                                            <dd><a title="运动裤" href="#"><span>运动裤</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="冬季">冬季</span></dt>
+                                                            <dd><a title="棉裤" href="#"><span>棉裤</span></a></dd>
+                                                            <dd><a title="阔腿裤" href="#"><span>阔腿裤</span></a></dd>
+                                                            <dd><a title="追裤" href="#"><span>追裤</span></a></dd>
+                                                            <dd><a title="飞鼠裤" href="#"><span>飞鼠裤</span></a></dd>
+                                                            <dd><a title="烟管裤" href="#"><span>烟管裤</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="brand-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span>实力商家</span></dt>
+                                                            <dd><a rel="nofollow" title="花颜巧语 " target="_blank" href="#" rel="nofollow"><span class="red">花颜巧语 </span></a></dd>
+                                                            <dd><a rel="nofollow" title="糖衣小屋" target="_blank" href="#" rel="nofollow"><span>糖衣小屋</span></a></dd>
+                                                            <dd><a rel="nofollow" title="卡拉迪克  " target="_blank" href="#" rel="nofollow"><span class="red">卡拉迪克  </span></a></dd>
+                                                            <dd><a rel="nofollow" title="暖春童话 " target="_blank" href="#" rel="nofollow"><span>暖春童话 </span></a></dd>
+                                                            <dd><a rel="nofollow" title="华盛童装批发行 " target="_blank" href="#" rel="nofollow"><span>华盛童装批发行 </span></a></dd>
+                                                            <dd><a rel="nofollow" title="奈仕华童装旗舰店" target="_blank" href="#" rel="nofollow"><span>奈仕华童装旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="斑蒂尼BONDYNI" target="_blank" href="#" rel="nofollow"><span class="red">斑蒂尼BONDYNI</span></a></dd>
+                                                            <dd><a rel="nofollow" title="猫儿朵朵 " target="_blank" href="#" rel="nofollow"><span>猫儿朵朵 </span></a></dd>
+                                                            <dd><a rel="nofollow" title="童衣阁" target="_blank" href="#" rel="nofollow"><span class="red">童衣阁</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b class="arrow"></b>
+                                </li>
+                                <li class="appliance js_toggle relative">
+                                    <div class="category-info">
+                                        <h3 class="category-name b-category-name"><i>
+                                            <img src="~/images/chocolate.png"></i><a class="ml-22" title="球类">球类</a></h3>
+                                        <em>&gt;</em>
+                                    </div>
+                                    <div class="menu-item menu-in top">
+                                        <div class="area-in">
+                                            <div class="area-bg">
+                                                <div class="menu-srot">
+                                                    <div class="sort-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="球类">球类</span></dt>
+                                                            <dd><a title="篮球" href="#"><span>篮球</span></a></dd>
+                                                            <dd><a title="排球" href="#"><span>排球</span></a></dd>
+                                                            <dd><a title="羽毛球" href="#"><span>羽毛球</span></a></dd>
+                                                            <dd><a title="乒乓球" href="#"><span>乒乓球</span></a></dd>
+                                                            <dd><a title="高尔夫" href="#"><span>高尔夫</span></a></dd>
+                                                            <dd><a title="橄榄球" href="#"><span>橄榄球</span></a></dd>
+                                                            <dd><a title="足球" href="#"><span>足球</span></a></dd>
+                                                            <dd><a title="棒球" href="#"><span>棒球</span></a></dd>
+                                                            <dd><a title="桌球" href="#"><span>桌球</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="brand-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span>实力商家</span></dt>
+                                                            <dd><a rel="nofollow" title="歌芙品牌旗舰店" target="_blank" href="#" rel="nofollow"><span class="red">歌芙品牌旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="爱丝蓝内衣厂" target="_blank" href="#" rel="nofollow"><span>爱丝蓝内衣厂</span></a></dd>
+                                                            <dd><a rel="nofollow" title="香港优蓓尔防辐射" target="_blank" href="#" rel="nofollow"><span>香港优蓓尔防辐射</span></a></dd>
+                                                            <dd><a rel="nofollow" title="蓉莉娜内衣批发" target="_blank" href="#" rel="nofollow"><span>蓉莉娜内衣批发</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b class="arrow"></b>
+                                </li>
+                                <li class="appliance js_toggle relative">
+                                    <div class="category-info">
+                                        <h3 class="category-name b-category-name"><i>
+                                            <img src="~/images/chocolate.png"></i><a class="ml-22" title="帽子/背包">帽子/背包</a></h3>
+                                        <em>&gt;</em>
+                                    </div>
+                                    <div class="menu-item menu-in top">
+                                        <div class="area-in">
+                                            <div class="area-bg">
+                                                <div class="menu-srot">
+                                                    <div class="sort-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="帽子">帽子</span></dt>
+                                                            <dd><a title="八角帽" href="#"><span>八角帽</span></a></dd>
+                                                            <dd><a title="拿破仑帽" href="#"><span>拿破仑帽</span></a></dd>
+                                                            <dd><a title="爵士帽" href="#"><span>爵士帽</span></a></dd>
+                                                            <dd><a title="巴拿马草帽" href="#"><span>巴拿马草帽</span></a></dd>
+                                                            <dd><a title="针织帽" href="#"><span>针织帽</span></a></dd>
+                                                            <dd><a title="鸭舌帽" href="#"><span>鸭舌帽</span></a></dd>
+                                                            <dd><a title="棒球帽" href="#"><span>棒球帽</span></a></dd>
+                                                            <dd><a title="太阳帽" href="#"><span>太阳帽</span></a></dd>
+                                                            <dd><a title="渔夫帽" href="#"><span>渔夫帽</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="背包">背包</span></dt>
+                                                            <dd><a title="双肩包" href="#"><span>双肩包</span></a></dd>
+                                                            <dd><a title="腰包" href="#"><span>腰包</span></a></dd>
+                                                            <dd><a title="休闲包" href="#"><span>休闲包</span></a></dd>
+                                                            <dd><a title="单肩包" href="#"><span>单肩包</span></a></dd>
+                                                            <dd><a title="帆布包" href="#"><span>帆布包</span></a></dd>
+                                                            <dd><a title="手提包" href="#"><span>手提包</span></a></dd>
+                                                            <dd><a title="真皮包" href="#"><span>真皮包</span></a></dd>
+                                                            <dd><a title="旅行包" href="#"><span>旅行包</span></a></dd>
+                                                            <dd><a title="斜挎包" href="#"><span>斜挎包</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="brand-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span>实力商家</span></dt>
+                                                            <dd><a rel="nofollow" title="呵呵嘿官方旗舰店" target="_blank" href="#" rel="nofollow"><span class="red">呵呵嘿官方旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="格瑞旗舰店" target="_blank" href="#" rel="nofollow"><span>格瑞旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="飞彦大厂直供" target="_blank" href="#" rel="nofollow"><span class="red">飞彦大厂直供</span></a></dd>
+                                                            <dd><a rel="nofollow" title="红e·艾菲妮" target="_blank" href="#" rel="nofollow"><span>红e·艾菲妮</span></a></dd>
+                                                            <dd><a rel="nofollow" title="本真旗舰店" target="_blank" href="#" rel="nofollow"><span class="red">本真旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="杭派女装批发网" target="_blank" href="#" rel="nofollow"><span class="red">杭派女装批发网</span></a></dd>
+                                                            <dd><a rel="nofollow" title="华伊阁旗舰店" target="_blank" href="#" rel="nofollow"><span>华伊阁旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="独家折扣旗舰店" target="_blank" href="#" rel="nofollow"><span>独家折扣旗舰店</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b class="arrow"></b>
+                                </li>
+                                <li class="appliance js_toggle relative">
+                                    <div class="category-info">
+                                        <h3 class="category-name b-category-name"><i>
+                                            <img src="~/images/chocolate.png"></i><a class="ml-22" title="运动器材/作用">运动器材/作用</a></h3>
+                                        <em>&gt;</em>
+                                    </div>
+                                    <div class="menu-item menu-in top">
+                                        <div class="area-in">
+                                            <div class="area-bg">
+                                                <div class="menu-srot">
+                                                    <div class="sort-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="蛋糕">健身</span></dt>
+                                                            <dd><a title="38功能健身器" href="#"><span>38功能健身器</span></a></dd>
+                                                            <dd><a title="动感单车" href="#"><span>动感单车</span></a></dd>
+                                                            <dd><a title="登山机" href="#"><span>登山机</span></a></dd>
+                                                            <dd><a title="空气踏步机" href="#"><span>空气踏步机</span></a></dd>
+                                                            <dd><a title="BH跑步机" href="#"><span>BH跑步机</span></a></dd>
+                                                            <dd><a title="健身车" href="#"><span>健身车</span></a></dd>
+                                                            <dd><a title="楼梯式登山机" href="#"><span>楼梯式登山机</span></a></dd>
+                                                            <dd><a title="哑铃飞鸟" href="#"><span>哑铃飞鸟</span></a></dd>
+                                                            <dd><a title="臂力器" href="#"><span>臂力器</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="减肥">减肥</span></dt>
+                                                            <dd><a title="瑜伽垫" href="#"><span>瑜伽垫</span></a></dd>
+                                                            <dd><a title="跳绳" href="#"><span>跳绳</span></a></dd>
+                                                            <dd><a title="甩脂腰带" href="#"><span>甩脂腰带</span></a></dd>
+                                                            <dd><a title="震动腰带" href="#"><span>震动腰带</span></a></dd>
+                                                            <dd><a title="椭圆机" href="#"><span>椭圆机</span></a></dd>
+                                                            <dd><a title="益尔健收腹机" href="#"><span>益尔健收腹机</span></a></dd>
+                                                            <dd><a title="腹机板" href="#"><span>腹机板</span></a></dd>
+                                                            <dd><a title="瑜伽球" href="#"><span>瑜伽球</span></a></dd>
+                                                            <dd><a title="塑腹带" href="#"><span>塑腹带</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="brand-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span>实力商家</span></dt>
+                                                            <dd><a rel="nofollow" title="呵呵嘿官方旗舰店" target="_blank" href="#" rel="nofollow"><span class="red">呵呵嘿官方旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="格瑞旗舰店" target="_blank" href="#" rel="nofollow"><span>格瑞旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="飞彦大厂直供" target="_blank" href="#" rel="nofollow"><span class="red">飞彦大厂直供</span></a></dd>
+                                                            <dd><a rel="nofollow" title="红e·艾菲妮" target="_blank" href="#" rel="nofollow"><span>红e·艾菲妮</span></a></dd>
+                                                            <dd><a rel="nofollow" title="本真旗舰店" target="_blank" href="#" rel="nofollow"><span class="red">本真旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="杭派女装批发网" target="_blank" href="#" rel="nofollow"><span class="red">杭派女装批发网</span></a></dd>
+                                                            <dd><a rel="nofollow" title="华伊阁旗舰店" target="_blank" href="#" rel="nofollow"><span>华伊阁旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="独家折扣旗舰店" target="_blank" href="#" rel="nofollow"><span>独家折扣旗舰店</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b class="arrow"></b>
+                                </li>
+                                <li class="appliance js_toggle relative">
+                                    <div class="category-info">
+                                        <h3 class="category-name b-category-name"><i>
+                                            <img src="~/images/chocolate.png"></i><a class="ml-22" title="运动套装/春秋">运动套装/春秋</a></h3>
+                                        <em>&gt;</em>
+                                    </div>
+                                    <div class="menu-item menu-in top">
+                                        <div class="area-in">
+                                            <div class="area-bg">
+                                                <div class="menu-srot">
+                                                    <div class="sort-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="春季">春季</span></dt>
+                                                            <dd><a title="球类运动服" href="#"><span>球类运动服</span></a></dd>
+                                                            <dd><a title="田径服" href="#"><span>田径服</span></a></dd>
+                                                            <dd><a title="水上运动服" href="#"><span>水上运动服</span></a></dd>
+                                                            <dd><a title="举重服" href="#"><span>举重服</span></a></dd>
+                                                            <dd><a title="韩版女装" href="#"><span>韩版女装</span></a></dd>
+                                                            <dd><a title="哥弟连衣裙" href="#"><span>哥弟连衣裙</span></a></dd>
+                                                            <dd><a title="卫衣" href="#"><span>卫衣</span></a></dd>
+                                                            <dd><a title="妈妈装" href="#"><span>妈妈装</span></a></dd>
+                                                            <dd><a title="雪纺" href="#"><span>雪纺</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="秋季">秋季</span></dt>
+                                                            <dd><a title="摔跤装" href="#"><span>摔跤装</span></a></dd>
+                                                            <dd><a title="击剑服" href="#"><span>击剑服</span></a></dd>
+                                                            <dd><a title="球类运动服" href="#"><span>球类运动服</span></a></dd>
+                                                            <dd><a title="田径服" href="#"><span>田径服</span></a></dd>
+                                                            <dd><a title="水上运动服" href="#"><span>水上运动服</span></a></dd>
+                                                            <dd><a title="举重服" href="#"><span>举重服</span></a></dd>
+                                                            <dd><a title="冰上运动装" href="#"><span>冰上运动装</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="brand-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span>实力商家</span></dt>
+                                                            <dd><a rel="nofollow" title="YYKCLOT" target="_blank" href="#" rel="nofollow"><span class="red">YYKCLOT</span></a></dd>
+                                                            <dd><a rel="nofollow" title="池氏品牌男装" target="_blank" href="#" rel="nofollow"><span class="red">池氏品牌男装</span></a></dd>
+                                                            <dd><a rel="nofollow" title="男装日志" target="_blank" href="#" rel="nofollow"><span>男装日志</span></a></dd>
+                                                            <dd><a rel="nofollow" title="索比诺官方旗舰店" target="_blank" href="#" rel="nofollow"><span>索比诺官方旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="onTTno傲徒" target="_blank" href="#" rel="nofollow"><span class="red">onTTno傲徒</span></a></dd>
+                                                            <dd><a rel="nofollow" title="卡斯郎世家批发城" target="_blank" href="#" rel="nofollow"><span class="red">卡斯郎世家批发城</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b class="arrow"></b>
+                                </li>
+                                <li class="appliance js_toggle relative">
+                                    <div class="category-info">
+                                        <h3 class="category-name b-category-name"><i>
+                                            <img src="~/images/chocolate.png"></i><a class="ml-22" title="巧克力">运动套装/夏冬</a></h3>
+                                        <em>&gt;</em>
+                                    </div>
+                                    <div class="menu-item menu-in top">
+                                        <div class="area-in">
+                                            <div class="area-bg">
+                                                <div class="menu-srot">
+                                                    <div class="sort-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="夏季">夏季</span></dt>
+                                                            <dd><a title="情侣装" href="#"><span>情侣装</span></a></dd>
+                                                            <dd><a title="亲子装" href="#"><span>亲子装</span></a></dd>
+                                                            <dd><a title="闺蜜装" href="#"><span>闺蜜装</span></a></dd>
+                                                            <dd><a title="兄弟装" href="#"><span>兄弟装</span></a></dd>
+                                                            <dd><a title="姊妹装" href="#"><span>姊妹装</span></a></dd>
+                                                            <dd><a title="团队装" href="#"><span>团队装</span></a></dd>
+                                                            <dd><a title="班服" href="#"><span>班服</span></a></dd>
+                                                            <dd><a title="个人定做" href="#"><span>个人定做</span></a></dd>
+                                                            <dd><a title="其它" href="#"><span>其它</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="冬季">冬季</span></dt>
+                                                            <dd><a title="情侣装" href="#"><span>情侣装</span></a></dd>
+                                                            <dd><a title="亲子装" href="#"><span>亲子装</span></a></dd>
+                                                            <dd><a title="闺蜜装" href="#"><span>闺蜜装</span></a></dd>
+                                                            <dd><a title="兄弟装" href="#"><span>兄弟装</span></a></dd>
+                                                            <dd><a title="姊妹装" href="#"><span>姊妹装</span></a></dd>
+                                                            <dd><a title="团队装" href="#"><span>团队装</span></a></dd>
+                                                            <dd><a title="班服" href="#"><span>班服</span></a></dd>
+                                                            <dd><a title="个人定做" href="#"><span>个人定做</span></a></dd>
+                                                            <dd><a title="其它" href="#"><span>其它</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="brand-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span>实力商家</span></dt>
+                                                            <dd><a rel="nofollow" title="花颜巧语 " target="_blank" href="#" rel="nofollow"><span class="red">花颜巧语 </span></a></dd>
+                                                            <dd><a rel="nofollow" title="糖衣小屋" target="_blank" href="#" rel="nofollow"><span>糖衣小屋</span></a></dd>
+                                                            <dd><a rel="nofollow" title="卡拉迪克  " target="_blank" href="#" rel="nofollow"><span class="red">卡拉迪克  </span></a></dd>
+                                                            <dd><a rel="nofollow" title="暖春童话 " target="_blank" href="#" rel="nofollow"><span>暖春童话 </span></a></dd>
+                                                            <dd><a rel="nofollow" title="华盛童装批发行 " target="_blank" href="#" rel="nofollow"><span>华盛童装批发行 </span></a></dd>
+                                                            <dd><a rel="nofollow" title="奈仕华童装旗舰店" target="_blank" href="#" rel="nofollow"><span>奈仕华童装旗舰店</span></a></dd>
+                                                            <dd><a rel="nofollow" title="斑蒂尼BONDYNI" target="_blank" href="#" rel="nofollow"><span class="red">斑蒂尼BONDYNI</span></a></dd>
+                                                            <dd><a rel="nofollow" title="童衣阁" target="_blank" href="#" rel="nofollow"><span class="red">童衣阁</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b class="arrow"></b>
+                                </li>
+                                <li class="appliance js_toggle relative">
+                                    <div class="category-info">
+                                        <h3 class="category-name b-category-name"><i>
+                                            <img src="~/images/chocolate.png"></i><a class="ml-22" title="快速健康减肥">快速健康减肥</a></h3>
+                                        <em>&gt;</em>
+                                    </div>
+                                    <div class="menu-item menu-in top">
+                                        <div class="area-in">
+                                            <div class="area-bg">
+                                                <div class="menu-srot">
+                                                    <div class="sort-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="减肥药">减肥药</span></dt>
+                                                            <dd><a title="曲美" href="#"><span>曲美</span></a></dd>
+                                                            <dd><a title="苦瓜消脂素" href="#"><span>苦瓜消脂素</span></a></dd>
+                                                            <dd><a title="绿瘦减肥胶囊" href="#"><span>绿瘦减肥胶囊</span></a></dd>
+                                                            <dd><a title="绿瘦减肥药" href="#"><span>绿瘦减肥药</span></a></dd>
+                                                            <dd><a title="左旋肉碱" href="#"><span>左旋肉碱</span></a></dd>
+                                                            <dd><a title="舒尔佳" href="#"><span>舒尔佳</span></a></dd>
+                                                            <dd><a title="艾丽" href="#"><span>艾丽</span></a></dd>
+                                                        </dl>
+                                                        <dl class="dl-sort">
+                                                            <dt><span title="减肥茶">减肥茶</span></dt>
+                                                            <dd><a title="旗人减肥茶" href="#"><span>旗人减肥茶</span></a></dd>
+                                                            <dd><a title="荷叶山楂减肥茶" href="#"><span>荷叶山楂减肥茶</span></a></dd>
+                                                            <dd><a title="大肚子减肥茶" href="#"><span>大肚子减肥茶</span></a></dd>
+                                                            <dd><a title="清肠茶" href="#"><span>清肠茶</span></a></dd>
+                                                            <dd><a title="御生堂减肥茶" href="#"><span>御生堂减肥茶</span></a></dd>
+                                                            <dd><a title="雅塑" href="#"><span>雅塑</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="brand-side">
+                                                        <dl class="dl-sort">
+                                                            <dt><span>实力商家</span></dt>
+                                                            <dd><a title="今生只围你" target="_blank" href="#" rel="nofollow"><span>今生只围你</span></a></dd>
+                                                            <dd><a title="忆佳人" target="_blank" href="#" rel="nofollow"><span class="red">忆佳人</span></a></dd>
+                                                            <dd><a title="斐洱普斯" target="_blank" href="#" rel="nofollow"><span class="red">斐洱普斯</span></a></dd>
+                                                            <dd><a title="聚百坊" target="_blank" href="#" rel="nofollow"><span class="red">聚百坊</span></a></dd>
+                                                            <dd><a title="朵朵棉织直营店" target="_blank" href="#" rel="nofollow"><span>朵朵棉织直营店</span></a></dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b class="arrow"></b>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!--轮播-->
+
+            <script type="text/javascript">
+                (function () {
+                    $('.am-slider').flexslider();
+                });
+                $(document).ready(function () {
+                    $("li").hover(function () {
+                        $(".category-content .category-list li.first .menu-in").css("display", "none");
+                        $(".category-content .category-list li.first").removeClass("hover");
+                        $(this).addClass("hover");
+                        $(this).children("div.menu-in").css("display", "block")
+                    }, function () {
+                        $(this).removeClass("hover")
+                        $(this).children("div.menu-in").css("display", "none")
+                    });
+                })
+            </script>
+
+
+
+            <!--小导航 -->
+            <div class="am-g am-g-fixed smallnav">
+                <div class="am-u-sm-3">
+                    <a href="sort.html">
+                        <img src="images/navsmall.jpg" />
+                        <div class="title">商品分类</div>
+                    </a>
+                </div>
+                <div class="am-u-sm-3">
+                    <a href="#">
+                        <img src="images/huismall.jpg" />
+                        <div class="title">大聚惠</div>
+                    </a>
+                </div>
+                <div class="am-u-sm-3">
+                    <a href="#">
+                        <img src="images/mansmall.jpg" />
+                        <div class="title">个人中心</div>
+                    </a>
+                </div>
+                <div class="am-u-sm-3">
+                    <a href="#">
+                        <img src="images/moneysmall.jpg" />
+                        <div class="title">投资理财</div>
+                    </a>
+                </div>
+            </div>
+
+            <!--走马灯 -->
+
+            <div class="marqueen">
+                <span class="marqueen-title">商城头条</span>
+                <div class="demo">
+
+                    <ul>
+                        <li class="title-first"><a target="_blank" href="#">
+                            <img src="images/TJ2.jpg"></img>
+                            <span>[特惠]</span>商城爆品1分秒								
+                        </a></li>
+                        <li class="title-first"><a target="_blank" href="#">
+                            <span>[公告]</span>商城与广州市签署战略合作协议
+								     <img src="images/TJ.jpg"></img>
+                            <p>XXXXXXXXXXXXXXXXXX</p>
+                        </a></li>
+
+                        <div class="mod-vip">
+                            <div class="m-baseinfo">
+                                <a href="person/index.html">
+                                    @{
+                                        if (Session["name"] == null)
+                                        {
+                                          <img src="~/images/getAvatar.do.jpg">
+                                        }
+                                        else
+                                        {
+                                        <img src="~/img_bj/@Session["photo"]">
+                                        }
+                                    }
+                                   
+                                </a>
+                                <em>Hi,<span class="s-name">
+                                    @{
+                                        if (Session["name"] == null)
+                                        {
+                                        @:小叮当
+                                        }
+                                        else
+                                        {
+                                        @Session["name"]
+                                        }
+                                    }
+
+                                </span>
+                                    <a href="#">
+                                        <p>点击更多优惠活动</p>
+                                    </a>
+                                </em>
+                            </div>
+                            <div class="member-logout">
+                                @{
+                                    if (Session["name"] == null)
+                                    {
+                                         <a class="am-btn-warning btn" href="/Login/Index">登录</a>
+                                         <a class="am-btn-warning btn" href="/Register/Index">注册</a>
+                                    }
+                                    else
+                                    {
+
+                                    }
+                                }
+
+                            </div>
+                            <div class="member-login">
+                                <a href="#"><strong>0</strong>待收货</a>
+                                <a href="#"><strong>0</strong>待发货</a>
+                                <a href="#"><strong>0</strong>待付款</a>
+                                <a href="#"><strong>0</strong>待评价</a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                        <li><a target="_blank" href="#"><span>[特惠]</span>洋河年末大促，低至两件五折</a></li>
+                        <li><a target="_blank" href="#"><span>[公告]</span>华北、华中部分地区配送延迟</a></li>
+                        <li><a target="_blank" href="#"><span>[特惠]</span>家电狂欢千亿礼券 买1送1！</a></li>
+
+                    </ul>
+                    <div class="advTip">
+                        <img src="~/img/logo.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <script type="text/javascript">
+            if ($(window).width() < 640) {
+                function autoScroll(obj) {
+                    $(obj).find("ul").animate({
+                        marginTop: "-39px"
+                    }, 500, function () {
+                        $(this).css({
+                            marginTop: "0px"
+                        }).find("li:first").appendTo(this);
+                    })
+                }
+                $(function () {
+                    setInterval('autoScroll(".demo")', 3000);
+                })
+            }
+        </script>
+    </div>
+}
+
+
+
+
+<!--菜单 -->
+
+@section footerSection{
+
+    <div class="tip">
+        <div id="sidebar">
+            <div id="wrap">
+                <div id="prof" class="item ">
+                    <a href="# ">
+                        <span class="setting "></span>
+                    </a>
+                    <div class="ibar_login_box status_login " style="display:none">
+                        <div class="avatar_box ">
+                            <p class="avatar_imgbox ">
+                               @{
+                                   if (Session["photo"] == null)
+                                   { 
+                                       <img src="~/images/no-img_mid_.jpg" />
+                                   }
+                                   else
+                                   {
+                                       <img src="~/images/@Session["photo"]" />
+                                   }
+                                    }
+                            </p>
+                            <ul class="user_info ">
+                                <li>昵称:@{ if (Session["name"] == null)
+                                          {
+                                              @:小叮当
+                                       }
+                                          else
+                                          {
+                                          @Session["name"]
+                                          }
+                                          } </li>
+                               
+                            </ul>
+                        </div>
+                            
+                        <i class="icon_arrow_white "></i>
+                    </div>
+
+                </div>
+                <div id="shopCart " class="item ">
+                    <a href="/Home/ShopCart">
+                        <span class="message "></span>
+                    </a>
+                    <p>
+                        购物车
+                    </p>
+                    <p class="cart_num ">
+                        @{
+                            if (Session["scart"] == null)
+                            {
+                            @:0
+                            }
+                            else
+                            {
+                            @Session["scart"]
+                            }
+                        }
+                    </p>
+                </div>
+                <div id="asset " class="item ">
+                    <a href="# ">
+                        <span class="view "></span>
+                    </a>
+                    <div class="mp_tooltip ">
+                        我的资产
+							<i class="icon_arrow_right_black "></i>
+                    </div>
+                </div>
+
+                <div id="foot " class="item ">
+                    <a href="# ">
+                        <span class="zuji "></span>
+                    </a>
+                    <div class="mp_tooltip ">
+                        我的足迹
+							<i class="icon_arrow_right_black "></i>
+                    </div>
+                </div>
+
+                <div id="brand " class="item ">
+                    <a href="#">
+                        <span class="wdsc ">
+                            <img src="~/images/wdsc.png" /></span>
+                    </a>
+                    <div class="mp_tooltip ">
+                        我的收藏
+							<i class="icon_arrow_right_black "></i>
+                    </div>
+                </div>
+
+                <div id="broadcast " class="item ">
+                    <a href="# ">
+                        <span class="chongzhi ">
+                            <img src="~/images/chongzhi.png " /></span>
+                    </a>
+                    <div class="mp_tooltip ">
+                        我要充值
+							<i class="icon_arrow_right_black "></i>
+                    </div>
+                </div>
+
+                <div class="quick_toggle ">
+                    <li class="qtitem ">
+                        <a href="# "><span class="kfzx "></span></a>
+                        <div class="mp_tooltip ">客服中心<i class="icon_arrow_right_black "></i></div>
+                    </li>
+                    <!--二维码 -->
+                    <li class="qtitem ">
+                        <a href="#none "><span class="mpbtn_qrcode "></span></a>
+                        <div class="mp_qrcode " style="display: none;">
+                            <img src="images/weixin_code_145.png " /><i class="icon_arrow_white "></i>
+                        </div>
+                    </li>
+                    <li class="qtitem ">
+                        <a href="#top " class="return_top "><span class="top "></span></a>
+                    </li>
+                </div>
+
+                <!--回到顶部 -->
+                <div id="quick_links_pop " class="quick_links_pop hide "></div>
+
+            </div>
+
+        </div>
+        <div id="prof-content " class="nav-content ">
+            <div class="nav-con-close ">
+                <i class="am-icon-angle-right am-icon-fw "></i>
+            </div>
+            <div>
+                我
+            </div>
+        </div>
+        <div id="shopCart-content " class="nav-content ">
+            <div class="nav-con-close ">
+                <i class="am-icon-angle-right am-icon-fw "></i>
+            </div>
+            <div>
+                购物车
+            </div>
+        </div>
+        <div id="asset-content " class="nav-content ">
+            <div class="nav-con-close ">
+                <i class="am-icon-angle-right am-icon-fw "></i>
+            </div>
+            <div>
+                资产
+            </div>
+
+            <div class="ia-head-list ">
+                <a href="# " target="_blank " class="pl ">
+                    <div class="num ">0</div>
+                    <div class="text ">优惠券</div>
+                </a>
+                <a href="# " target="_blank " class="pl ">
+                    <div class="num ">0</div>
+                    <div class="text ">红包</div>
+                </a>
+                <a href="# " target="_blank " class="pl money ">
+                    <div class="num ">￥0</div>
+                    <div class="text ">余额</div>
+                </a>
+            </div>
+
+        </div>
+        <div id="foot-content " class="nav-content ">
+            <div class="nav-con-close ">
+                <i class="am-icon-angle-right am-icon-fw "></i>
+            </div>
+            <div>
+                足迹
+            </div>
+        </div>
+        <div id="brand-content " class="nav-content ">
+            <div class="nav-con-close ">
+                <i class="am-icon-angle-right am-icon-fw "></i>
+            </div>
+            <div>
+                收藏
+            </div>
+        </div>
+        <div id="broadcast-content " class="nav-content ">
+            <div class="nav-con-close ">
+                <i class="am-icon-angle-right am-icon-fw "></i>
+            </div>
+            <div>
+                充值
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+    window.jQuery || document.write('<script src="basic/js/jquery.min.js "><\/script>');
+</script>
+<script type="text/javascript " src="basic/js/quick_links.js "></script>

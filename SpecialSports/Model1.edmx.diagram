@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8a7cd6b5e7cb4550b5b7c9fd0a3d85f1" Name="关系图1">
+        <EntityTypeShape EntityType="SportsDBModel.Collect" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.Evaluate" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.GoodsE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.GoodsImg" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.GoodsInfo" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.GoodsType" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.Logistics" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.NoticeInfo" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.ShopManagement" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.StoreInfo" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.StoreInfo_X_GoodsType" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.tbl_AddressInfo" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.tbl_manager" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.TurnsImg" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.UserInfo" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsDBModel.GoodsTypeInfo" Width="1.5" PointX="6.3037553458957722" PointY="17.234935664215559" />
+        <EntityTypeShape EntityType="SportsDBModel.OrderBySeller" Width="1.5" PointX="7.0590453776805866" PointY="7.5413297598908331" />
+        <EntityTypeShape EntityType="SportsDBModel.tbl_orderdetailsInfo" Width="1.5" PointX="7.4567917675975677" PointY="30.230753763686284" />
+        <EntityTypeShape EntityType="SportsDBModel.History" Width="1.5" PointX="2.4898645330638924" PointY="11.966854056328002" />
+        <EntityTypeShape EntityType="SportsDBModel.UserInfo_detail" Width="1.5" PointX="4.2414325718960875" PointY="20.821415910879811" />
+        <EntityTypeShape EntityType="SportsDBModel.tbl_county" Width="1.5" PointX="2.4540587693704565" PointY="8.66171898351131" />
+        <EntityTypeShape EntityType="SportsDBModel.tbl_province" Width="1.5" PointX="8.3952033279441309" PointY="1.5848700262535689" />
+        <EntityTypeShape EntityType="SportsDBModel.tbl_city" Width="1.5" PointX="1.9478962169717513" PointY="23.976826082904278" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

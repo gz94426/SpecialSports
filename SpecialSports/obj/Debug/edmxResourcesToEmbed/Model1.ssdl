@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SportsDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SportsDBModelStoreContainer">
+    <EntitySet Name="Collect" EntityType="SportsDBModel.Store.Collect" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Evaluate" EntityType="SportsDBModel.Store.Evaluate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GoodsE" EntityType="SportsDBModel.Store.GoodsE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GoodsImg" EntityType="SportsDBModel.Store.GoodsImg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GoodsInfo" EntityType="SportsDBModel.Store.GoodsInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GoodsType" EntityType="SportsDBModel.Store.GoodsType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GoodsTypeInfo" EntityType="SportsDBModel.Store.GoodsTypeInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="History" EntityType="SportsDBModel.Store.History" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Logistics" EntityType="SportsDBModel.Store.Logistics" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NoticeInfo" EntityType="SportsDBModel.Store.NoticeInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderBySeller" EntityType="SportsDBModel.Store.OrderBySeller" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShopManagement" EntityType="SportsDBModel.Store.ShopManagement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StoreInfo" EntityType="SportsDBModel.Store.StoreInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StoreInfo_X_GoodsType" EntityType="SportsDBModel.Store.StoreInfo_X_GoodsType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_AddressInfo" EntityType="SportsDBModel.Store.tbl_AddressInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_city" EntityType="SportsDBModel.Store.tbl_city" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_county" EntityType="SportsDBModel.Store.tbl_county" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_manager" EntityType="SportsDBModel.Store.tbl_manager" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_orderdetailsInfo" EntityType="SportsDBModel.Store.tbl_orderdetailsInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_province" EntityType="SportsDBModel.Store.tbl_province" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TurnsImg" EntityType="SportsDBModel.Store.TurnsImg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfo" EntityType="SportsDBModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserInfo_detail" EntityType="SportsDBModel.Store.UserInfo_detail" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Collect">
+    <Key>
+      <PropertyRef Name="Collect_id" />
+    </Key>
+    <Property Name="Collect_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Collect_ctime" Type="datetime" />
+    <Property Name="userid" Type="int" />
+    <Property Name="GoodsInfo_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Evaluate">
+    <Key>
+      <PropertyRef Name="eva_id" />
+    </Key>
+    <Property Name="eva_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="eva_rcontent" Type="text" />
+    <Property Name="userid" Type="int" />
+    <Property Name="eva_rtime" Type="datetime" />
+    <Property Name="manager_id" Type="int" />
+    <Property Name="eva_etime" Type="datetime" />
+    <Property Name="eva_content" Type="text" />
+    <Property Name="eva_rank" Type="int" />
+    <Property Name="orderdetails_id" Type="int" />
+  </EntityType>
+  <EntityType Name="GoodsE">
+    <Key>
+      <PropertyRef Name="GoodsE_Id" />
+    </Key>
+    <Property Name="GoodsE_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Goods_count" Type="int" />
+    <Property Name="Goods_Color" Type="varchar" MaxLength="100" />
+    <Property Name="Goods_CodeNumber" Type="varchar" MaxLength="100" />
+    <Property Name="GoodsInfo_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="GoodsImg">
+    <Key>
+      <PropertyRef Name="GoodsImg_id" />
+    </Key>
+    <Property Name="GoodsImg_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GoodsImg_thumbone" Type="varchar" MaxLength="100" />
+    <Property Name="GoodsImg_thumbone_big" Type="varchar" MaxLength="100" />
+    <Property Name="GoodsImg_thumbtwo" Type="varchar" MaxLength="100" />
+    <Property Name="GoodsImg_thumbtwo_big" Type="varchar" MaxLength="100" />
+    <Property Name="GoodsImg_thumbthree" Type="varchar" MaxLength="100" />
+    <Property Name="GoodsImg_thumbthree_big" Type="varchar" MaxLength="100" />
+    <Property Name="GoodsImg_detail" Type="text" />
+    <Property Name="Goods_id" Type="int" />
+    <Property Name="Goods_color" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="GoodsInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GoodsName" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="Goods_number" Type="varchar" MaxLength="20" />
+    <Property Name="GoodsURL" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="Goods_remark" Type="text" />
+    <Property Name="Goods_price" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="Goods_addtime" Type="datetime" />
+    <Property Name="Goods_recommend" Type="int" />
+    <Property Name="Goods_grounding" Type="int" />
+    <Property Name="Goods_filed" Type="varchar" MaxLength="100" />
+    <Property Name="Goods_season" Type="int" />
+    <Property Name="Goods_isDel" Type="int" />
+    <Property Name="StoreInfo_ID" Type="int" />
+    <Property Name="GoodsType_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="GoodsType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="nvarchar" Nullable="false" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="GoodsTypeInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="GoodsType_Id" Type="int" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="64" />
+    <Property Name="Typeremark" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="footmark_id" />
+    </Key>
+    <Property Name="footmark_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="footmark_browsing_time" Type="datetime" />
+    <Property Name="userid" Type="int" />
+    <Property Name="GoodsInfo_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Logistics">
+    <Key>
+      <PropertyRef Name="Log_ID" />
+    </Key>
+    <Property Name="Log_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Log_name" Type="nvarchar" MaxLength="64" />
+    <Property Name="username" Type="nvarchar" MaxLength="64" />
+    <Property Name="Log_adrees" Type="nvarchar" MaxLength="128" />
+    <Property Name="Log_tel" Type="varchar" MaxLength="20" />
+    <Property Name="order_no" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="NoticeInfo">
+    <Key>
+      <PropertyRef Name="announcement_id" />
+    </Key>
+    <Property Name="announcement_id" Type="int" Nullable="false" />
+    <Property Name="announcement_title" Type="varchar" MaxLength="50" />
+    <Property Name="announcement_content" Type="text" />
+    <Property Name="manager_id" Type="int" />
+    <Property Name="announcement_time" Type="datetime" />
+    <Property Name="announcement_isDel" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderBySeller">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="order_createTime" Type="datetime" />
+    <Property Name="order_status" Type="int" />
+    <Property Name="orderdetails_status" Type="int" />
+    <Property Name="order_cost" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="userid" Type="int" />
+    <Property Name="GoodsInfo_ID" Type="int" />
+    <Property Name="order_no" Type="nvarchar" MaxLength="64" />
+    <Property Name="order_paytime" Type="datetime" />
+    <Property Name="order_shiptime" Type="datetime" />
+    <Property Name="order_makedtime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ShopManagement">
+    <Key>
+      <PropertyRef Name="cart_id" />
+    </Key>
+    <Property Name="cart_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cart_addtime" Type="datetime" />
+    <Property Name="cart_photo" Type="nvarchar" MaxLength="64" />
+    <Property Name="cart_quantity" Type="int" />
+    <Property Name="cart_color" Type="nvarchar" MaxLength="64" />
+    <Property Name="cart_CodeNumber" Type="nvarchar" MaxLength="64" />
+    <Property Name="GoodsInfo_ID" Type="int" />
+    <Property Name="userid" Type="int" />
+    <Property Name="StoreInfo_ID" Type="int" />
+    <Property Name="cart_price" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="cart_remark" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="StoreInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="StoreName" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="StoreURL" Type="nvarchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="StoreInfo_X_GoodsType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StoreInfoId" Type="int" Nullable="false" />
+    <Property Name="GoodsTypeId" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_AddressInfo">
+    <Key>
+      <PropertyRef Name="address_Id" />
+    </Key>
+    <Property Name="address_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="address_isDefault" Type="int" />
+    <Property Name="address_shengfen" Type="varchar" MaxLength="100" />
+    <Property Name="address_city" Type="varchar" MaxLength="100" />
+    <Property Name="address_qu" Type="varchar" MaxLength="100" />
+    <Property Name="address_street" Type="varchar" MaxLength="100" />
+    <Property Name="address_detail" Type="varchar" MaxLength="100" />
+    <Property Name="address_telephone" Type="varchar" MaxLength="20" />
+    <Property Name="address_name" Type="varchar" MaxLength="20" />
+    <Property Name="userid" Type="int" />
+    <Property Name="address_isDel" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_city">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Name="city_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="city_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="pro_id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_county">
+    <Key>
+      <PropertyRef Name="county_id" />
+    </Key>
+    <Property Name="county_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="county_name" Type="nvarchar" MaxLength="20" />
+    <Property Name="city_id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_manager">
+    <Key>
+      <PropertyRef Name="manager_id" />
+    </Key>
+    <Property Name="manager_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="manager_name" Type="varchar" MaxLength="20" />
+    <Property Name="manager_pwd" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tbl_orderdetailsInfo">
+    <Key>
+      <PropertyRef Name="orderdetails_id" />
+    </Key>
+    <Property Name="orderdetails_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="orderdetails_totalprice" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="orderdetails_quantity" Type="int" />
+    <Property Name="cart_color" Type="nvarchar" MaxLength="64" />
+    <Property Name="cart_CodeNumber" Type="nvarchar" MaxLength="64" />
+    <Property Name="cart_photo" Type="nvarchar" MaxLength="64" />
+    <Property Name="cart_remark" Type="nvarchar" MaxLength="200" />
+    <Property Name="orderdetails_unitprice" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="GoodsInfo_id" Type="int" />
+    <Property Name="order_id" Type="int" />
+    <Property Name="orderdetails_price" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="StoreInfo_ID" Type="int" />
+    <Property Name="UserInfo_id" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_province">
+    <Key>
+      <PropertyRef Name="pro_id" />
+    </Key>
+    <Property Name="pro_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pro_name" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TurnsImg">
+    <Key>
+      <PropertyRef Name="alternatePlay_id" />
+    </Key>
+    <Property Name="alternatePlay_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="alternatePlay_img" Type="varchar" MaxLength="50" />
+    <Property Name="alternatePlay_time" Type="datetime" />
+    <Property Name="alternatePlay_isDel" Type="int" />
+    <Property Name="GoodsInfo_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" MaxLength="64" />
+    <Property Name="user_password" Type="varchar" MaxLength="50" />
+    <Property Name="user_status" Type="int" />
+    <Property Name="user_createTime" Type="datetime" />
+    <Property Name="store_id" Type="int" />
+  </EntityType>
+  <EntityType Name="UserInfo_detail">
+    <Key>
+      <PropertyRef Name="detailId" />
+    </Key>
+    <Property Name="detailId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="int" />
+    <Property Name="username" Type="varchar" MaxLength="20" />
+    <Property Name="user_nickname" Type="varchar" MaxLength="20" />
+    <Property Name="user_sex" Type="varchar" MaxLength="2" />
+    <Property Name="user_email" Type="varchar" MaxLength="30" />
+    <Property Name="user_telphone" Type="varchar" MaxLength="11" />
+    <Property Name="user_idcard" Type="varchar" MaxLength="18" />
+    <Property Name="user_qq" Type="varchar" MaxLength="50" />
+    <Property Name="user_photo" Type="varchar" MaxLength="200" />
+    <Property Name="user_money" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="user_remark" Type="varchar" MaxLength="100" />
+  </EntityType>
+</Schema>

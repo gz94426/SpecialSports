@@ -1,0 +1,381 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html>
+
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link href="~/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" />
+    <link href="~/css/dlstyle.css" rel="stylesheet" />
+    <script src="~/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+    <script src="~/AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+    <script src="~/js/layer/layer.js"></script>
+    <script>
+        var i = 1;
+        var ii = 1;
+        $(function () {
+
+            //服务协议的选中
+            $("#reader-me").click(function () {
+                if (i == 1) {
+                    $("#reader-me").attr("chked", "true")
+                    i = 0;
+                }
+                else {
+                    $("#reader-me").attr("chked", "false")
+                    i = 1;
+                }
+            })
+
+
+
+            //邮箱号注册
+            $("#reEbut").click(function () {
+                var parssword = $("#password").val();
+
+                var newparssword = $("#passwordRepeat").val();
+
+                var name = $("#email").val();
+
+                var chked = $("#reader-me").attr("chked");
+
+                if (newparssword == "" || parssword == "" || name == "") {
+                    layer.open({
+                        title: "系统提示",
+                        content: "不能为空，请检查",
+                        yes: function () {
+                            layer.closeAll();
+                        }
+
+                    })
+                }
+                else {
+
+                    if (parssword != newparssword) {
+                        layer.open({
+                            title: "系统提示",
+                            content: "两次密码输入不一致，请检查",
+                            yes: function () {
+                                layer.closeAll();
+                            }
+                        })
+
+                    } else if (parssword.length < 6 && parssword.length > 15) {
+                        layer.open({
+                            title: "系统提示",
+                            content: "密码要大于5位数，小于15位数",
+                            yes: function () {
+                                layer.closeAll();
+                            }
+                        })
+                    }
+                    else if (chked == "false") {
+                        layer.open({
+                            title: "系统提示",
+                            content: "请阅读服务协议!",
+                            yes: function () {
+                                layer.closeAll();
+                            }
+                        })
+                    }
+
+                    else {
+                        var a = name + "," + parssword;
+
+                        $.post("CostomersUserEmail_Register", { user: a }, function (e) {
+
+                            if (e == 1) {
+                                location.href = "../Login/Index";
+                            }
+                            else if (e == -1) {
+                                layer.open({
+                                    title: "系统提示",
+                                    content: "系统操作错误!",
+                                    yes: function () {
+                                        layer.closeAll();
+                                    }
+                                })
+                            }
+                            else {
+                                layer.open({
+                                    title: "系统提示",
+                                    content: e,
+                                    yes: function () {                                      
+                                        layer.closeAll();
+                                    }
+                                })
+                            }
+
+
+
+                        });
+                    }
+                }
+
+            });
+
+
+            //手机注册
+
+
+
+
+            //服务协议的选中
+            $("#reader-me-ch").click(function () {
+                if (ii == 1) {
+                    $("#reader-me-ch").attr("chcked", "true")
+                    ii = 0;
+                }
+                else {
+                    $("#reader-me-ch").attr("chcked", "false")
+                    ii = 1;
+                }
+            })
+
+
+            $("#resEbut").click(function () {
+
+                var name = $("#phone").val();
+                var parssword = $("#repassword").val();
+                var newparssword = $("#repasswordRepeat").val();
+                var chcked = $("#reader-me-ch").attr("chcked");
+                var yzm = $("#code").val();
+                if (newparssword == "" || parssword == "" || name == "" || yzm == "") {
+                    layer.open({
+                        title: "系统提示",
+                        content: "文本框不能为空，请检查",
+                        yes: function () {
+                            layer.closeAll();
+                        }
+
+                    })
+                }
+                else {
+
+
+                    if (parssword != newparssword) {
+                        layer.open({
+                            title: "系统提示",
+                            content: "两次密码输入不一致，请检查",
+                            yes: function () {
+                                layer.closeAll();
+                            }
+                        })
+
+                    }
+                    else if (parssword.length < 5 && parssword.length > 15) {
+                        layer.open({
+                            title: "系统提示",
+                            content: "密码要大于5位数，小于15位数",
+                            yes: function () {
+                                layer.closeAll();
+                            }
+                        })
+                    }
+                    else if (chcked == "false") {
+                        layer.open({
+                            title: "系统提示",
+                            content: "请阅读服务协议!",
+                            yes: function () {
+                                layer.closeAll();
+                            }
+                        })
+                    }
+                    else {
+                        var a = name + "," + parssword + "," + yzm;
+
+                        $.post("CostomersUserPhone_Register", { user: a }, function (e) {
+
+                            if (e == 1) {
+                                location.href = "../Login/Index";
+                            }
+                            else if (e == -1) {
+                                layer.open({
+                                    title: "系统提示",
+                                    content: "系统操作错误!",
+                                    yes: function () {
+                                        $("#dyMobileButton").html("发送");
+
+                                        layer.closeAll();
+                                    }
+                                })
+                            }
+                            else {
+                                layer.open({
+                                    title: "系统提示",
+                                    content: e,
+                                    yes: function () {
+                                        $("#dyMobileButton").html("发送");
+
+                                        layer.closeAll();
+                                    }
+                                })
+                            }
+
+
+                        });
+                    }
+                }
+            })
+
+
+
+        });
+        var sendMobileCode = function () {
+            var name = $("#phone").val();
+            if (name == "" || name.length != 11) {
+                layer.open({
+                    title: "系统提示",
+                    content: "手机号,格式不正确!",
+                    yes: function () {
+                        layer.closeAll();
+                    }
+                })
+            } else {
+                $.post("sendMobileCode", { phone: name }, function (e) {
+                    if (e == "00000") {
+                        $("#dyMobileButton").html("已发送");
+                    }
+                })
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="login-boxtitle">
+        <a href="#">
+            <img src="~/images/SSlogo.png" /></a>
+    </div>
+
+    <div style="background: #A5d6f4">
+        <div class="res-main">
+            <div class="login-banner-bg">
+                <span></span>
+                <img src="~/images/islogin.jpg" />
+
+            </div>
+            <div class="login-box">
+
+                <div class="am-tabs" id="doc-my-tabs">
+                    <ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
+                        <li class="am-active"><a href="#">邮箱注册</a></li>
+                        <li><a href="#">手机号注册</a></li>
+                    </ul>
+
+                    <div class="am-tabs-bd">
+                        <div class="am-tab-panel am-active">
+                            <form method="post" id="form1">
+
+                                <div class="user-email">
+                                    <label for="email"><i class="am-icon-envelope-o"></i></label>
+                                    <input type="email" name="name" id="email" placeholder="请输入邮箱账号">
+                                </div>
+                                <div class="user-pass">
+                                    <label for="password"><i class="am-icon-lock"></i></label>
+                                    <input type="password" name="password" id="password" placeholder="设置密码">
+                                </div>
+                                <div class="user-pass">
+                                    <label for="passwordRepeat"><i class="am-icon-lock"></i></label>
+                                    <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="确认密码">
+                                </div>
+
+                            </form>
+
+                            <div class="login-links">
+                                <label for="reader-me">
+                                    <input id="reader-me" type="checkbox" chked="false">
+                                    点击表示您同意商城《服务协议》
+                                </label>
+                            </div>
+                            <div class="am-cf">
+                                <input type="button" name="" id="reEbut" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+                            </div>
+
+                        </div>
+
+                        <div class="am-tab-panel">
+                            <form method="post" id="form2">
+                                <div class="user-phone">
+                                    <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
+                                    <input type="tel" name="phone" id="phone" placeholder="请输入手机号">
+                                </div>
+                                <div class="verification">
+                                    <label for="code"><i class="am-icon-code-fork"></i></label>
+                                    <input type="tel" name="code" id="code" placeholder="请输入验证码">
+                                    <a class="btn" href="#" onclick="sendMobileCode()" id="sendMobileCode">
+                                        <span id="dyMobileButton">获取</span></a>
+                                </div>
+                                <div class="user-pass">
+                                    <label for="repassword"><i class="am-icon-lock"></i></label>
+                                    <input type="password" name="password" id="repassword" placeholder="设置密码">
+                                </div>
+                                <div class="user-pass">
+                                    <label for="repasswordRepeat"><i class="am-icon-lock"></i></label>
+                                    <input type="password" name="repasswordRepeat" id="repasswordRepeat" placeholder="确认密码">
+                                </div>
+
+
+                            </form>
+                            <div class="login-links">
+                                <label for="reader-me-ch">
+                                    <input id="reader-me-ch" type="checkbox" chcked="false">
+                                    点击表示您同意商城《服务协议》</label>
+
+                            </div>
+                            <div class="am-cf">
+                                <input type="button" name="" id="resEbut" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+                            </div>
+
+                            <hr>
+                        </div>
+
+                        <script>
+                            $(function () {
+                                $('#doc-my-tabs').tabs();
+                            })
+                        </script>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer ">
+        <div class="footer-hd ">
+            <p>
+                <a href="# ">恒望科技</a>
+                <b>|</b>
+                <a href="# ">商城首页</a>
+                <b>|</b>
+                <a href="# ">支付宝</a>
+                <b>|</b>
+                <a href="# ">物流</a>
+            </p>
+        </div>
+        <div class="footer-bd ">
+            <p>
+                <a href="# ">关于恒望</a>
+                <a href="# ">合作伙伴</a>
+                <a href="# ">联系我们</a>
+                <a href="# ">网站地图</a>
+                <em>© 2015-2025 Hengwang.com 版权所有</em>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

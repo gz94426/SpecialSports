@@ -1,0 +1,418 @@
+﻿@{
+    ViewBag.Title = "ShopCart";
+    Layout = "~/Views/_MasterLayout.cshtml";
+}
+
+
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>购物车页面</title>
+
+    <link href="~/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css" />
+    <link href="~/basic/css/demo.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/cartstyle.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/optstyle.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="~/js/jquery.js"></script>
+    <script src="~/js/layer/layer.js" type=""></script>
+
+    <script>
+        $(function () {
+            $("#delte").click(function () {
+                var id = "";
+                $(".item-content").each(function () {
+                    if ($(this).find(".kk").attr("check") == "true") {
+                        id += $(this).find("input[type=hidden]").val() + "," //得到编号                    
+                    }
+
+                    layer.open({
+                        title: "确认删除",
+                        content: "是否确认删除?",
+                        yes: function () {
+                            $.post("DeleteCartAll", { id: id }, function (e) {
+                                if (e > 0) {
+                                    layer.open({
+                                        title: "系统提示",
+                                        content: "删除成功!",
+                                        yes: function () {
+                                            location.href = "ShopCart";
+                                            layer.closeAll();
+                                        }
+                                    })
+                                }
+
+                            });
+                            layer.closeAll();
+                        }
+                    })
+
+                });
+            })
+
+
+
+            //移除当前商品
+            $(".delete").click(function () {
+                var ul = $(this).parent().parent().parent();
+                var cardId = ul.find("input[type=hidden]").val();//商品id
+
+                layer.open({
+                    title: "确认删除",
+                    content: "是否确认删除?",
+                    yes: function () {
+                        $.post("DeleteCart", { id: cardId }, function (e) {
+                            if (e == 1) {
+                                layer.open({
+                                    title: "系统提示",
+                                    content: "移除成功!",
+                                    yes: function () {
+                                        location.href = "ShopCart";
+                                        layer.closeAll();
+                                    }
+                                })
+                            }
+                        });
+                        layer.closeAll();
+                    }
+                })
+              
+
+
+            });
+
+
+
+            //开始判断
+            $(".min").each(function () {
+
+                if ($(this).next().val() == 1) {
+                    $(this).prop("disabled", "disabled")
+                }
+
+            })
+
+            //减去单个商品数量
+            $(".min").click(function () {
+
+                var minc = $(this).next().val();//获取选中前的数量
+
+                var mincount = minc - 1;//选中后的数量
+                if (mincount == 1) {
+                    $(this).prop("disabled", "disabled");//更改不可选定的样式
+
+                }
+                var ul = $(this).parent().parent().parent().parent().parent();//返回到当前的ul
+                var moneyone = ul.find("li").eq(3).find("em").html();//获取商品单价
+                var money = ul.find("li").eq(5).find("em").html();//获取单个商品总金额
+
+                ul.find("li").eq(5).find("em").html(parseInt(money - moneyone));//修改当前商品的总金额
+
+            })
+
+            //添加单个商品数量
+            $(".add").click(function () {
+                $(this).prev().prev().prop("disabled", "");//更改不可选定的样式
+
+                var minc = $(this).prev().val();//获取选中前的数量
+                var mincount = minc + 1;//选中后的数量
+
+                var ul = $(this).parent().parent().parent().parent().parent();//返回到当前的ul
+                var moneyone = ul.find("li").eq(3).find("em").html();//获取商品单价
+
+                var money = ul.find("li").eq(5).find("em").html();//获取单个商品总金额
+
+
+                ul.find("li").eq(5).find("em").html(parseInt(money) + parseInt(moneyone));//修改当前商品的总金额
+
+            })
+
+            //选中
+            $(".kk").click(function () {
+
+                var count = $("#J_SelectedItemsCount").html()
+                var moneycount = $("#J_Total").html();
+                if ($(this).attr("check") == "false") {
+                    var ul = $(this).parent().parent().parent();
+                    //选中标示
+                    $(this).attr("check", "true");
+
+                    //添加件数，金额
+                    $("#J_SelectedItemsCount").html(parseInt(count) + 1);
+                    var money = ul.find("li").eq(5).find("em").html();
+
+                    $("#J_Total").html(parseInt(moneycount) + parseInt(money));
+
+                    //禁止使用
+                    ul.find(".min").prop("disabled", "disabled");
+                    ul.find(".add").prop("disabled", "disabled");
+
+                }
+                else {
+                    var ul = $(this).parent().parent().parent();
+                    //取消选中标示
+                    $(this).attr("check", "false");
+                    $("#J_SelectAllCbx2").attr("cked", "false");
+                    $("#J_SelectAllCbx2").prop("checked", "");
+
+                    //添加件数，金额
+                    $("#J_SelectedItemsCount").html(parseInt(count) - 1);
+                    var money = ul.find("li").eq(5).find("em").html()
+
+                    $("#J_Total").html(parseInt(moneycount) - parseInt(money));
+
+                    //可以使用
+                    ul.find(".min").prop("disabled", "");
+                    ul.find(".add").prop("disabled", "");
+                }
+                if ($(this).parent().parent().parent().parent().find(".kk:[check=true]").length == $(this).parent().parent().parent().parent().find(".kk").length) {
+                    $("#J_SelectAllCbx2").attr("cked", "true");
+                    $("#J_SelectAllCbx2").prop("checked", "checked");
+                }
+            });
+
+            //全选
+            $("#J_SelectAllCbx2").click(function () {
+                var ul = $(this).parent().parent().parent().parent();
+                if ($(this).attr("cked") == "false") {
+                    var bs = $(".kk").attr("check", "true");//全部选中标示
+                    var spAll = bs.length //所有商品个数               
+                    $("#J_SelectedItemsCount").html(spAll) //添加到件数
+
+                    var count = 0;
+                    $(".number").each(function () {
+                        count = parseInt(count) + parseInt($(this).html());
+                    });
+                    $("#J_Total").html(count);//修改合计金额
+                    //全选标示
+                    $(this).attr("cked", "true");
+                    $(".kk").attr("check", "true");
+                    $(this).prop("checked", "checked");
+                    $(".kk").prop("checked", "checked");
+                    //禁止使用
+                    ul.find(".min").prop("disabled", "disabled");
+                    ul.find(".add").prop("disabled", "disabled");
+                }
+                else {
+                    //全不选标示
+                    $(this).attr("cked", "false");
+                    $(this).prop("checked", "");
+                    $(".kk").attr("check", "false");
+                    $(".kk").prop("checked", "");
+
+                    //修改合计
+                    $("#J_Total").html(0)
+                    $("#J_SelectedItemsCount").html(0.00)
+
+                    //取消禁止
+                    ul.find(".min").prop("disabled", "");
+                    ul.find(".add").prop("disabled", "");
+                }
+
+            });
+
+            //查看是否选中购买的商品
+            $("#J_Go").click(function () {
+                var total = $("#J_SelectedItemsCount").html();
+                if (total == "0") {
+                    layer.open({
+                        title: "系统提示",
+                        content: "请注意如果没有选择宝贝，将无法结算!",
+                        yes: function () {
+                            layer.closeAll();
+                        }
+                    })
+                } else {
+                    var id = "";
+                    var num = "";
+                    $(".item-content").each(function () {
+                        if ($(this).find(".kk").attr("check") == "true") {
+                            id += $(this).find("input[type=hidden]").val() + "," //得到编号
+                            num += $(this).find(".min").next().val() + ","; //得到数量
+                        }
+                    });
+
+                    $.post("ShoPay", { id: id, num: num }, function () {
+                        location.href = "/Home/Pay";
+                    });
+                }
+
+
+
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+
+    <div class="clear"></div>
+
+    <!--购物车 -->
+    <div class="concent">
+        <div id="cartTable">
+            <div class="cart-table-th">
+                <div class="wp">
+                    <div class="th th-chk">
+                        <div id="J_SelectAll1" class="select-all J_SelectAll">
+                        </div>
+                    </div>
+                    <div class="th th-item">
+                        <div class="td-inner">商品信息</div>
+                    </div>
+                    <div class="th th-price">
+                        <div class="td-inner">单价</div>
+                    </div>
+                    <div class="th th-amount">
+                        <div class="td-inner">数量</div>
+                    </div>
+                    <div class="th th-sum">
+                        <div class="td-inner">金额</div>
+                    </div>
+                    <div class="th th-op">
+                        <div class="td-inner">操作</div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+
+            <tr class="item-list">
+                <div class="bundle  bundle-last ">
+                    <div class="bundle-hd">
+                        <div class="bd-promos">
+                            <div class="bd-has-promo">已享优惠:<span class="bd-has-promo-content">省￥19.50</span>&nbsp;&nbsp;</div>
+                            <div class="act-promo">
+                                @*<a href="#" target="_blank">第二支半价，第三支免费<span class="gt">&gt;&gt;</span></a>*@
+                            </div>
+                            <span class="list-change theme-login">编辑</span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="bundle-main">
+
+                        @{
+                            Decimal num = 0;
+                            List<SpecialSports.ShopManagement> ss = Session["shopcart"] as List<SpecialSports.ShopManagement>;
+                            foreach (var item in ss)
+                            {
+                            <ul class="item-content clearfix">
+                                <li class="td td-chk">
+                                    <input type="hidden" value="@item.cart_id" />
+                                    <div class="cart-checkbox ">
+                                        <input class="kk" id="J_CheckBox_170037950254"  name="items[]" value="@item.cart_id" check="false" type="checkbox">
+                                        <label for="J_CheckBox_170037950254"></label>
+                                    </div>
+                                </li>
+                                <li class="td td-item">
+                                    <div class="item-pic">
+                                        <a href="/home/goodsdetail?id=@item.GoodsInfo_ID" target="_blank" data-title="@item.cart_remark" class="J_MakePoint" data-point="tbcart.8.12">
+                                            <img src="~/img/@item.cart_photo" style="height:80px;width:80px" class="itempic J_ItemImg"></a>
+                                    </div>
+                                    <div class="item-info">
+                                        <div class="item-basic-info">
+                                            <a href="/home/goodsdetail?id=@item.GoodsInfo_ID" target="_blank" title="@item.cart_remark" class="item-title J_MakePoint" data-point="tbcart.8.11">@item.cart_remark</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="td td-info">
+                                    <div class="item-props item-props-can">
+                                        <span class="sku-line">款式：@item.cart_color</span>
+                                        <span class="sku-line">尺寸：@item.cart_CodeNumber</span>
+
+                                        <i class="theme-login am-icon-sort-desc"></i>
+                                    </div>
+                                </li>
+                                <li class="td td-price">
+                                    <div class="item-price price-promo-promo">
+                                        <div class="price-content">
+                                            <div class="price-line">
+                                                <em class="price-original">@item.cart_price</em>
+                                            </div>
+                                            <div class="price-line">
+                                                <em class="J_Price price-now" tabindex="0">@item.cart_price</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="td td-amount">
+                                    <div class="amount-wrapper ">
+                                        <div class="item-amount ">
+                                            <div class="sl">
+                                                <input class="min am-btn" name="" type="button" value="-" />
+                                                <input class="text_box" name="" type="text" value="@item.cart_quantity" style="width: 30px;" />
+                                                <input class="add am-btn" name="" type="button" value="+" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="td td-sum">
+                                    <div class="td-inner">
+                                        @{
+                                num = Convert.ToDecimal(item.cart_quantity * item.cart_price) + num;
+                                        }
+                                        <em tabindex="0" class="J_ItemSum number">@(item.cart_quantity * item.cart_price)</em>
+                                    </div>
+                                </li>
+                                <li class="td td-op">
+                                    <div class="td-inner">
+                                        <a title="移入收藏夹" class="btn-fav" href="#">移入收藏夹</a>
+                                        <a href="javascript:;" data-point-url="#"  class="delete">删除</a>
+
+                                    </div>
+
+                                </li>
+                            </ul>
+                            }
+                                    
+                        }
+
+                        <div class="clear"></div>
+
+                        <div class="float-bar-wrapper">
+                            <div id="J_SelectAll2" class="select-all J_SelectAll">
+                                <div class="cart-checkbox">
+                                    @*check-all check*@
+                                    <input class="" id="J_SelectAllCbx2" name="select-all" cked="false" type="checkbox">
+                                    <label for="J_SelectAllCbx2"></label>
+                                </div>
+                                <span>全选</span>
+                            </div>
+                            <div class="operations">
+                                <a  hidefocus="true" class="deleteAll" id="delte">删除</a>
+                                <a href="#" hidefocus="true" class="J_BatchFav">移入收藏夹</a>
+                            </div>
+                            <div class="float-bar-right">
+                                <div class="amount-sum">
+                                    <span class="txt">已选商品</span>
+                                    <em id="J_SelectedItemsCount">0</em><span class="txt">件</span>
+                                    <div class="arrow-box">
+                                        <span class="selected-items-arrow"></span>
+                                        <span class="arrow"></span>
+                                    </div>
+                                </div>
+                                <div class="price-sum">
+                                    <span class="txt">合计:</span>
+                                    <strong class="price">¥<em id="J_Total">0.00</em></strong>
+                                </div>
+                                <div class="btn-area">
+                                    <a id="J_Go" class="submit-btn submit-btn-disabled" aria-label="请注意如果没有选择宝贝，将无法结算">
+
+                                        <span>结&nbsp;算</span></a>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+﻿<?xml version ="1.0"?>
+<configuration xmlns="urn:microsoft-catalog:XML_Metabase_V269_0">
+<MBProperty>
+<IIS_Global	Location ="."
+		BINSchemaTimeStamp="ecda6e386cffd101"
+		ChangeNumber="257"
+		HistoryMajorVersionNumber="27"
+		SessionKey="49634b62980000004c00000040000000010200000168000000a400009a572199e62bbc04aa3127db242b427371e7bdd8905aa15862958631d72ec5d9211c4129b11d4491489d1fd383e245460a8588c7fedd76ae09fc19646e803a98a8bd07767f84702b219c45bc5f2b5a080b3eccce7f6b459980dbc176ab3192bf9bd8023a4e4d28e54861ba2b4e7e8436f1c930da8ed3267938c4d1d33ed9c0a0bc05211a"
+		XMLSchemaTimeStamp="429e6f386cffd101"
+	>
+</IIS_Global>
+<IIS_ROOT	Location ="/"
+		AdminACL="49634462e00000009800000040000000fba3f5b7fcd7c65fb6cb462f71d5cd7f84b375e56527ba6319e46c7507a1ec4b288c1bca7312b9695b3868a378d5d8689682c73929d5cb02d2d2f1c1350ab90a871b271302c94c0df223ab2a586ec304127ac56017708b6f7f9f602262a4829b7da6203baacc4e6a1b2783ce152ececf44d8c147714701f5aca02d5e4f7f199ba089716d0d0d493c32f53128acb8b5374d2162a07db1bdc84f14a1590d4d65508cbd414842e6365f7cd7ce277f90029723e25eb8ea66bb67aae298f5e3e2d1e86959bcded376c7cfc44548380dcd194647e737cb928efe5e"
+	>
+</IIS_ROOT>
+<IIsComputer	Location ="/LM"
+		EnableEditWhileRunning="0"
+		EnableHistory="1"
+		MaxBandwidth="4294967295"
+		MaxHistoryFiles="10"
+	>
+</IIsComputer>
+<IIsConfigObject	Location ="/LM/IISADMIN"
+	>
+</IIsConfigObject>
+<IIsConfigObject	Location ="/LM/IISADMIN/EXTENSIONS"
+	>
+</IIsConfigObject>
+<IIsConfigObject	Location ="/LM/IISADMIN/EXTENSIONS/DCOMCLSIDS"
+	>
+	<Custom
+		Name="MD_IISADMIN_EXTENSIONS"
+		ID="1028"
+		Value="{61738644-F196-11D0-9953-00C04FD919C1}"
+		Type="MULTISZ"
+		UserType="IIS_MD_UT_SERVER"
+		Attributes="NO_ATTRIBUTES"
+	/>
+</IIsConfigObject>
+<IIsConfigObject	Location ="/LM/IISADMIN/PROPERTYREGISTRATION"
+	>
+	<Custom
+		Name="MD_METADATA_ID_REGISTRATION"
+		ID="1030"
+		Value="0-65535;Microsoft Reserved
+			65536-524288;Microsoft IIS Admin Objects Reserved"
+		Type="MULTISZ"
+		UserType="IIS_MD_UT_SERVER"
+		Attributes="INHERIT"
+	/>
+</IIsConfigObject>
+<IIsLogModules	Location ="/LM/logging"
+		AdminACL="49634462a00000005800000040000000fba3f5b7fcd7c65ff6cb462fb1d5cd7f84b375e56527ba6319e42c7502a1ec4b288c1bca7312b9695b3868a378d5d8689682c73929d5cb02d3d0e5c1bc0ab90fa61a271322cb4c08e021ab2a586ed701bb7ac56036738b6f54c8328f6c6c8c7cb94626d1e4e255b4fab3e6de4d4b4e34f8f9cf2c20254f3104aec4bf8cae70ff96ea10af4ee34eb2a85a717a20c4a1f826de11d33dcc5bc8"
+	>
+</IIsLogModules>
+<IIsCustomLogModule	Location ="/LM/logging/Custom Logging"
+		LogCustomPropertyServicesString="W3SVC
+			MSFTPSVC
+			SMTPSVC
+			NNTPSVC"
+	>
+</IIsCustomLogModule>
+<IIsCustomLogModule	Location ="/LM/logging/Custom Logging/Date"
+		LogCustomPropertyDataType="6"
+		LogCustomPropertyHeader="date"
+		LogCustomPropertyID="4013"
+		LogCustomPropertyMask="1"
+		LogCustomPropertyName="日期"
+		LogCustomPropertyNodeID="1"
+	>
+</IIsCustomLogModule>
+<IIsCustomLogModule	Location ="/LM/logging/Custom Logging/Extended Properties"
+		LogCustomPropertyDataType="6"
+		LogCustomPropertyID="4013"
+		LogCustomPropertyName="扩展属性"
+		LogCustomPropertyNodeID="3"
+	>
+</IIsCustomLogModule>
+<IIsCustomLogModule	Location ="/LM/logging/Custom Logging/Extended Properties/Bytes Received"
+		LogCustomPropertyDataType="3"
+		LogCustomPropertyHeader="cs-bytes"
+		LogCustomPropertyMask="8192"
+		LogCustomPropertyName="接收的字节数"
+		LogCustomPropertyNodeID="17"
+	>
+</IIsCustomLogModule>
+<IIsCustomLogModule	Location ="/LM/logging/Custom Logging/Extended Properties/Bytes
